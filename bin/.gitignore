@@ -8,3 +8,11 @@
 /SomePane.class
 /Object.class
 /Space.class
+/HighScore.class
+/HighScoreMenu.class
+/CarSelect.class
+/Collision.class
+/GameOver.class
+/EnemyCar.class
+/Powerup.class
+/PlayerCar.class
