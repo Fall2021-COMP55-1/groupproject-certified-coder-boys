@@ -13,7 +13,6 @@ public class PlayerCar{
 	
 	public  int getWidth() {
 		return width;
-		
 	}
 	
 	public int getHeight() {
