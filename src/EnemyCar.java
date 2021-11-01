@@ -2,7 +2,7 @@
 //import java.util.Random;
 
 
-public class PlayerCar extends Object implements EnemyCar {
+//public class PlayerCar extends Object implements EnemyCar {
 //   private int speed = 3;
 //   
 //   public EnemyCar(){
