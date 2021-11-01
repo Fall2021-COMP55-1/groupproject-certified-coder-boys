@@ -22,7 +22,7 @@
 //   /** //outofbounds */
 //   @Override
 //   public     boolean outOfBounds() {   
-//       return y>MainGame.HEIGHT;
+//       return y>MainGame.height;
 //   }
 //
 //   /** move */
