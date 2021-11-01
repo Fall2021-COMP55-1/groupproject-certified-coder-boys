@@ -14,3 +14,4 @@ public class Collision {
 //        if (obj.crashBy(bullet)) { // Determine whether to collide  
 //            index = i; // Record the index of the collided enemy car  
 //            break; 
+//}
