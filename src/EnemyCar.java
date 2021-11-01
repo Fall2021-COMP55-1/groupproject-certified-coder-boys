@@ -11,7 +11,7 @@
 //       height = image.getHeight();
 //       y = -height;          
 //       Random rand = new Random();
-//       x = rand.nextInt(MainGame.WIDTH - width);
+//       x = rand.nextInt(MainGame.width - width);
 //   }
 //   /** getScore */
 //   @Override
