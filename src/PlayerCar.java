@@ -7,9 +7,24 @@ public class PlayerCar{
 	int height;
 	Space pos;
 	
-	public void playerCar();
-	public int getWidth();
-	public int getHeight();
-	public Space getSpace();
-	public string getFileName();
+	public void playerCar() {
+		
+	}
+	
+	public  int getWidth() {
+		return width;
+		
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+	
+	public Space getSpace() {
+		return null;
+	}
+	
+	public string getFileName(fileName) {
+		return null;
+	}
 }
