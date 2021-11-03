@@ -4,4 +4,5 @@ public class HighScoreMenu {
 	 * and assigns them to their respective arrays of scores[] and names[].  
 	 * Getter methods return the values so it can be properly displayed.
 	 */
+	//test
 }
