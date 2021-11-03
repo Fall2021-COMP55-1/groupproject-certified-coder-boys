@@ -18,10 +18,16 @@ public class HighScore {
 	String list;
 	Scanner reader;
 	
+	int pScore;
+	String pName;
+	
 	//constructor
-	public HighScore() {
+	public HighScore(String name, int score) {
 		scores = new int[10];
 		names = new String[10];
+		
+		pScore = score;
+		pName = name;
 		
 		//text file contains all of the scores in a single line
 		File data = new File("HighScores.txt");
@@ -60,12 +66,19 @@ public class HighScore {
 		
 	}
 	
+	public String[] getNames() {
+		return names;
+	}
+	
+	public int[] getScores() {
+		return scores;
+	}
+	
 	public static void main(String args[]) {
-		HighScore o = new HighScore();
-		//System.out.println(o.list);
+		HighScore o = new HighScore("Dababy", 999999);
 		
 		for(int i = 0; i<10; i++) {
-			System.out.println("Name: "+o.names[i]+" Score: "+o.scores[i]);
+			System.out.println("Name: "+o.getNames()[i]+" Score: "+o.getNames()[i]);
 		}
 		
 		
