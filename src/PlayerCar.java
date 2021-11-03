@@ -20,10 +20,10 @@ public class PlayerCar{
 	}
 	
 	public Space getSpace() {
-		return null;
+		return pos;
 	}
 	
 	public String getFileName(String fileName) { //needs to be fixed 
-		return null;
+		return fileName;
 	}
 }
