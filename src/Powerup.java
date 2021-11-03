@@ -1,8 +1,7 @@
-//public class Powerup {
+
 	/*
 	 * Sets the powerup’s speed, width, height, filename, and Space.
 	 */
-//}
 import java.awt.event.*;
 import javax.swing.*;
 
