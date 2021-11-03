@@ -11,7 +11,7 @@ public class HighScore {
  * the new score and sorts the array and rewrites the text file with the new scoreboard.
  * 
  * The HighScore.txt file is one continuous string.  Names first, scores second.  Names are
- * a length of 6, scores are a length of 6.
+ * a length of 6, scores are a length of 6.  :)
  */
 	int scores[];
 	String names[];
