@@ -1,17 +1,49 @@
-public class Collision {
-	/*
-	 * Takes the height, width, and coordinates of the player and 
-	 * another object from their respective Space and uses them to 
-	 * determine if the two objects overlap in checkCollision() and 
-	 * returns true or false based or whether not it does.
-	 */
-}
 //
-//public void checkCollision (EnemyCar enemycar) {  
-//    int index = -1; // Index of crashed cars  
-//    for (int i = 0; i < crash.length; i++) {  
-//        CrashingObject obj = crashing[i];  
-//        if (obj.crashBy(bullet)) { // Determine whether to collide  
-//            index = i; // Record the index of the collided enemy car  
-//            break; 
+//
+//import java.awt.event.*;
+//import javax.swing.*;
+//
+///**
+// * 
+// */
+//public class Collision {
+//
+//    private PlayerCar[] cars;
+//
+//    public Collision(PlayerCar[] cars) {
+//        this.cars = cars;
+//    }
+//
+//    public void checkCollision(PlayerCar car) {
+//
+//        for (PlayerCar c : cars) {
+//
+//            if (c instanceof EnemyCar) {
+//
+//                if (car == c) {
+//                    continue;
+//                }
+//                if (car.comparePosition(c)) {
+//                    car.setCrashed(true);
+//                    //still need to be fixed
+//                }
+//                c.setCrashed(false);
+//                //still need to be fixed
+//            }
+//            else {
+//                if (car == c) {
+//                    continue;
+//                }
+//
+//                if (car.comparePosition(c)) {
+//                    c.setCrashed(true);
+//                    car.setCrashed(true);
+//                    //still need to be fixed
+//                }
+//
+//            }
+//
+//        }
+//    }
+//
 //}
