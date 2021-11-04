@@ -18,16 +18,10 @@ public class HighScore {
 	String list;
 	Scanner reader;
 	
-	int pScore;
-	String pName;
-	
 	//constructor
-	public HighScore(String name, int score) {
+	public HighScore() {
 		scores = new int[10];
 		names = new String[10];
-		
-		pScore = score;
-		pName = name;
 		
 		//text file contains all of the scores in a single line
 		File data = new File("HighScores.txt");
@@ -58,12 +52,45 @@ public class HighScore {
 		}
 	}
 	
-	public void checkHighScore() {
-		
+	public boolean checkHighScore(String name, int score) {
+		//checks the lowest score to see if the player reached the scoreboard
+		if(scores[9]<score)
+			return true;
+		else
+			return false;
 	}
 	
-	public void newHighScore() {
+	public void newHighScore(String name, int score) {
+		if(checkHighScore(name, score)) {
+			names[0] = name;
+			scores[0] = score;
+			
+			sort();
+		}
+	}
+	
+	public void sort() {
+		int n = scores.length;  
 		
+	    for (int j = 1; j < n; j++) {  
+	    	int key = scores[j];
+	    	String key2 = names[j];
+	    	int i = j-1;  
+	    	while ( (i > -1) && ( scores[i] > key ) ) {  
+	    		scores[i+1] = scores[i];
+	    		names[i+1] = names[i];
+	    		i--;  
+	    	}  
+	    	scores[i+1] = key;
+	    	names[i+1] = key2;
+	    }
+	}
+	
+	public void print() {
+		for(int i = 9; i>=0; i--) {
+			System.out.println("Name: "+names[i]+" Score: "+scores[i]);
+		}
+		System.out.println("");
 	}
 	
 	public String[] getNames() {
@@ -75,12 +102,13 @@ public class HighScore {
 	}
 	
 	public static void main(String args[]) {
-		HighScore o = new HighScore("Dababy", 999999);
+		HighScore o = new HighScore();
 		
-		for(int i = 0; i<10; i++) {
-			System.out.println("Name: "+o.getNames()[i]+" Score: "+o.getNames()[i]);
-		}
+		o.print();
 		
+		o.newHighScore("Dababy", 999999);
 		
+		System.out.println("INSERTING: Dababy, 999999");
+		o.print();
 	}
 }
