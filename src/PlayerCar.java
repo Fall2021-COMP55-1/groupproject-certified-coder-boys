@@ -6,12 +6,13 @@ public class PlayerCar{
 	int width;
 	int height;
 	Space pos;
+	int health;
 	
 	public void playerCar() { //needs to be finished
 		
 	}
 	
-	public  int getWidth() {
+	public int getWidth() {
 		return width;
 	}
 	
@@ -25,5 +26,9 @@ public class PlayerCar{
 	
 	public String getFileName(String fileName) { //needs to be fixed 
 		return fileName;
+	}
+	
+	public void update() {
+		
 	}
 }
