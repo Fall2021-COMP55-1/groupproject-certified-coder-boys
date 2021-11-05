@@ -8,10 +8,12 @@ public class HighScoreMenu extends GraphicsPane {
 	
 	// you will use program to get access to all of the GraphicsProgram calls
 	private MainApplication program; 
-								
-	private final int BUTTON_SIZE = 50;
+
 	String names[];
 	int scores[];
+	
+	public static final int WINDOW_WIDTH = 800;
+	public static final int WINDOW_HEIGHT = 600;
 	
 	GLabel score1;
 	GLabel score2;
@@ -37,15 +39,34 @@ public class HighScoreMenu extends GraphicsPane {
 	
 	public void labels(){
 		score1 = new GLabel(names[9]+" "+scores[9], 100, 100);
+		score1.setLocation(WINDOW_WIDTH/2-score1.getWidth(), 100);
+		
 		score2 = new GLabel(names[8]+" "+scores[9], 100, 150);
+		score2.setLocation(WINDOW_WIDTH/2-score2.getWidth(), 150);
+		
 		score3 = new GLabel(names[7]+" "+scores[9], 100, 200);
+		score3.setLocation(WINDOW_WIDTH/2-score3.getWidth(), 200);
+		
 		score4 = new GLabel(names[6]+" "+scores[9], 100, 250);
+		score4.setLocation(WINDOW_WIDTH/2-score4.getWidth(), 250);
+		
 		score5 = new GLabel(names[5]+" "+scores[9], 100, 300);
+		score5.setLocation(WINDOW_WIDTH/2-score5.getWidth(), 300);
+		
 		score6 = new GLabel(names[4]+" "+scores[9], 100, 350);
+		score6.setLocation(WINDOW_WIDTH/2-score6.getWidth(), 350);
+		
 		score7 = new GLabel(names[3]+" "+scores[9], 100, 400);
+		score7.setLocation(WINDOW_WIDTH/2-score7.getWidth(), 400);
+		
 		score8 = new GLabel(names[2]+" "+scores[9], 100, 450);
+		score8.setLocation(WINDOW_WIDTH/2-score8.getWidth(), 450);
+		
 		score9 = new GLabel(names[1]+" "+scores[9], 100, 500);
+		score9.setLocation(WINDOW_WIDTH/2-score9.getWidth(), 500);
+		
 		score10 = new GLabel(names[0]+" "+scores[9], 100, 550);
+		score10.setLocation(WINDOW_WIDTH/2-score10.getWidth(), 550);
 	}
 
 	@Override
