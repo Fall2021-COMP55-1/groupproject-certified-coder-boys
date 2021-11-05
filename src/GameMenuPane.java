@@ -32,6 +32,7 @@ public class GameMenuPane extends GraphicsPane {
 	public void hideContents() {
 		//program.remove(img);
 		//program.remove(para);
+		program.remove(menuOpt1);
 	}
 
 	//@Override

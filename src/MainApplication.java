@@ -11,6 +11,7 @@ public class MainApplication extends GraphicsProgram {
 	private GraphicsPane curScreen;
 	private SomePane somePane;
 	private MenuPane menu;
+	private PlayPane playstate;
 	private GameMenuPane gameMenuPane;
 	
 	/* Method: setupInteractions
@@ -104,6 +105,7 @@ public class MainApplication extends GraphicsProgram {
 		somePane = new SomePane(this);
 		
 		menu = new MenuPane(this);
+		//playstate = new PlayPane(this);
 		setupInteractions();
 		switchToMenu();
 		gameMenuPane = new GameMenuPane(this);
