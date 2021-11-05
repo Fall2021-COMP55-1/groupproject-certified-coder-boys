@@ -16,7 +16,7 @@ public class GameOver {
 	 * MainGame using the KeyPressed method and calls newHighScore to place 
 	 * it in its proper position.
 	 */
-	public abstract class MenuPane extends GraphicsPane {
+//	public class MenuPane extends GraphicsPane {
 		
 		// you will use program to get access to all of the GraphicsProgram calls
 //		private MainApplication program; 
@@ -56,5 +56,5 @@ public class GameOver {
 //				program.switchToHighScore();
 //			}
 //		}
-	}
+//	}
 }
