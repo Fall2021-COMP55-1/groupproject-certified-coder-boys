@@ -15,6 +15,8 @@ public class HighScoreMenu extends GraphicsPane {
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
 	
+	GLabel highScore;
+	
 	GLabel score1;
 	GLabel score2;
 	GLabel score3;
@@ -25,6 +27,8 @@ public class HighScoreMenu extends GraphicsPane {
 	GLabel score8;
 	GLabel score9;
 	GLabel score10;
+	
+	GButton back;
 
 	public HighScoreMenu(MainApplication app) {
 		super();
@@ -35,9 +39,14 @@ public class HighScoreMenu extends GraphicsPane {
 		scores = o.getScores();
 		
 		labels();
+		
+		back = new GButton("BACK",100,100,100,100);
 	}
 	
 	public void labels(){
+		highScore = new GLabel("********** HIGH SCORE **********",100, 50);
+		highScore.setLocation(WINDOW_WIDTH/2-highScore.getWidth(), 50);
+		
 		score1 = new GLabel(names[9]+" "+scores[9], 100, 100);
 		score1.setLocation(WINDOW_WIDTH/2-score1.getWidth(), 100);
 		
@@ -71,6 +80,7 @@ public class HighScoreMenu extends GraphicsPane {
 
 	@Override
 	public void showContents() {
+		program.add(highScore);
 		program.add(score1);
 		program.add(score2);
 		program.add(score3);
@@ -81,10 +91,12 @@ public class HighScoreMenu extends GraphicsPane {
 		program.add(score8);
 		program.add(score9);
 		program.add(score10);
+		program.add(back);
 	}
 
 	@Override
 	public void hideContents() {
+		program.remove(highScore);
 		program.remove(score1);
 		program.remove(score2);
 		program.remove(score3);
@@ -95,10 +107,14 @@ public class HighScoreMenu extends GraphicsPane {
 		program.remove(score8);
 		program.remove(score9);
 		program.remove(score10);
+		program.remove(back);
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-
+		GObject obj = program.getElementAt(e.getX(), e.getY());
+		if (obj == back) {
+			program.switchToMenu();
+		}
 	}
 }
