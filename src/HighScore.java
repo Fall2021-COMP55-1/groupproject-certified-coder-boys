@@ -66,9 +66,12 @@ public class HighScore {
 			scores[0] = score;
 			
 			sort();
+			
+			//********STILL NEED TO REWRITE TXT FILE********
 		}
 	}
 	
+	//insertion sort
 	public void sort() {
 		int n = scores.length;  
 		
