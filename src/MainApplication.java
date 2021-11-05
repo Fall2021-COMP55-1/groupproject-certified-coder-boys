@@ -106,11 +106,12 @@ public class MainApplication extends GraphicsProgram {
 		somePane = new SomePane(this);
 		
 		menu = new MenuPane(this);
-		//playstate = new PlayPane(this);
-		setupInteractions();
-		switchToMenu();
 		highScorePane = new HighScoreMenu(this);
 		titleScreen = new TitleScreenPane(this);
+		
+		//playstate = new PlayPane(this);
+		setupInteractions();
+		//switchToMenu();
 		switchToGameMenu();
 	}
 
