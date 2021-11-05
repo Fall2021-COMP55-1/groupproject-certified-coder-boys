@@ -1,25 +1,35 @@
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 
-public class HighScoreMenu {
+import acm.graphics.GLabel;
+import acm.graphics.GObject;
+
+public class HighScoreMenu extends GraphicsPane {
 	
-	/*
-	 * The constructor gets names and scores in order from a text file 
-	 * and assigns them to their respective arrays of scores[] and names[].  
-	 * Getter methods return the values so it can be properly displayed.
-	 */
-	int scores[];
-	//string names[];
-	
-	public void mousePressed(MouseEvent e) {
-		
+	// you will use program to get access to all of the GraphicsProgram calls
+	private MainApplication program; 
+								
+	private final int BUTTON_SIZE = 50;
+	GLabel score1;
+
+	public HighScoreMenu(MainApplication app) {
+		super();
+		program = app;
+		score1 = new GLabel("Test", 0, 0);
 	}
-	
-	//public void HighScoreMenu() {
-		//return scores;
-	//}
-	
-	public void getName() {
-		//return names;
+
+	@Override
+	public void showContents() {
+		program.add(score1);
+	}
+
+	@Override
+	public void hideContents() {
+		program.remove(score1);
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+
 	}
 }
-//not finished yet
