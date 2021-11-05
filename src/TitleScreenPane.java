@@ -4,7 +4,7 @@ import acm.graphics.GImage;
 import acm.graphics.GLabel;
 import acm.graphics.GObject;
 
-public class GameMenuPane extends GraphicsPane {
+public class TitleScreenPane extends GraphicsPane {
 	private MainApplication program; 
 
 	//private GImage img;
@@ -14,7 +14,7 @@ public class GameMenuPane extends GraphicsPane {
 	private GLabel menuOpt3;
 
 
-	public GameMenuPane(MainApplication app) {
+	public TitleScreenPane(MainApplication app) {
 		this.program = app;
 		//img = new GImage("robot head.jpg", 100, 100);
 		//para = new GParagraph("welcome\nto my\nsecret room!", 150, 300);
