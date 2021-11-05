@@ -35,12 +35,12 @@ public class MenuPane extends GraphicsPane {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		GObject obj = program.getElementAt(e.getX(), e.getY());
-		if (obj == rect) {
-			program.switchToSome();
-		}
-		if (obj == rect2) {
+		//GObject obj = program.getElementAt(e.getX(), e.getY());
+		//if (obj == rect) {
+//			program.switchToSome();
+//		}
+//		if (obj == rect2) {
 			program.switchToHighScore();
-		}
+//		}
 	}
 }

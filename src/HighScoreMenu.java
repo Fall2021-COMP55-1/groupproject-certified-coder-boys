@@ -15,7 +15,8 @@ public class HighScoreMenu extends GraphicsPane {
 	public HighScoreMenu(MainApplication app) {
 		super();
 		program = app;
-		score1 = new GLabel("Test", 0, 0);
+		score1 = new GLabel("Test", 100, 100);
+		score1.setColor(Color.black);
 	}
 
 	@Override
