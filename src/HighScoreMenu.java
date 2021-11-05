@@ -65,6 +65,15 @@ public class HighScoreMenu extends GraphicsPane {
 	@Override
 	public void hideContents() {
 		program.remove(score1);
+		program.remove(score2);
+		program.remove(score3);
+		program.remove(score4);
+		program.remove(score5);
+		program.remove(score6);
+		program.remove(score7);
+		program.remove(score8);
+		program.remove(score9);
+		program.remove(score10);
 	}
 
 	@Override

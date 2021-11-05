@@ -30,6 +30,8 @@ public class HighScore {
 			list = reader.nextLine();
 
 		    //reads text file and assigns the scores/names to their respective arrays
+			//*ascending order*
+			//lowest score is index 0
 			for(int i = 0; i<10; i++){
 				names[i] = list.substring(12*i,12*i+6);
 				
