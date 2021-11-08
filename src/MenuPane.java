@@ -52,8 +52,8 @@ public class MenuPane extends GraphicsPane {
 		if (obj == rect2) {
 			program.switchToHighScore();
 		}
-//		if(obj == rect3) {
-//			program.
-//		}
+		if(obj == rect4) {
+			System.exit(0); // exiting the game!
+		}
 	}
 }
