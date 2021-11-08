@@ -53,7 +53,7 @@ public class MenuPane extends GraphicsPane {
 			program.switchToHighScore();
 		}
 		if(obj == rect4) {
-			System.exit(0); // exiting the game
+			System.exit(0); // exiting the game!
 		}
 	}
 }
