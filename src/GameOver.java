@@ -14,7 +14,7 @@ public class GameOver {
 	 * achieved a higher score than any on the scoreboard.  If so, 
 	 * it prompts the user to enter their name in conjunction with 
 	 * MainGame using the KeyPressed method and calls newHighScore to place 
-	 * it in its proper position.
+	 * it in its proper position
 	 */
 	public class MenuPane extends GraphicsPane {
 		
