@@ -1,4 +1,4 @@
-public class PlayerCar{
+public class PlayerCar extends Object{
 
 	 // Sets the powerup’s speed, width, height, filename, and Space.
 
@@ -24,7 +24,7 @@ public class PlayerCar{
 		return pos;
 	}
 	
-	public String getFileName(String fileName) { //needs to be fixed 
+	public String getFileName() {
 		return fileName;
 	}
 	

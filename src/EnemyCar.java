@@ -1,7 +1,7 @@
 import java.awt.event.*;
 import javax.swing.*;
 
-public class EnemyCar implements ActionListener {
+public class EnemyCar extends Object implements ActionListener{
 	/*
 	 * Sets the enemy’s speed, width, height, filename, and Space.  
 	 * spawn() returns the vehicle for placement in the Game class.
@@ -47,5 +47,9 @@ public class EnemyCar implements ActionListener {
 	
 	public String getFileName() { // may need to be fixed
 		return fileName;
+	}
+
+	void update() {
+		
 	}
 }
