@@ -28,6 +28,10 @@ public class PlayerCar extends Object{
 		return fileName;
 	}
 	
+	public int getHealth() {
+		return health;
+	}
+	
 	public void update() {
 		
 	}
