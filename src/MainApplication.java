@@ -108,6 +108,7 @@ public class MainApplication extends GraphicsProgram {
 		menu = new MenuPane(this);
 		highScorePane = new HighScoreMenu(this);
 		titleScreen = new TitleScreenPane(this);
+		playstate = new PlayPane(this);
 		
 		//playstate = new PlayPane(this);
 		setupInteractions();
@@ -129,6 +130,10 @@ public class MainApplication extends GraphicsProgram {
 	
 	public void switchToHighScore() {
 		switchToScreen(highScorePane);
+	}
+	
+	public void switchToGame() {
+		switchToScreen(playstate);
 	}
 	
 
