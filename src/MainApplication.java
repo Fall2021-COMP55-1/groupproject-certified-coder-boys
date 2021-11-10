@@ -107,7 +107,7 @@ public class MainApplication extends GraphicsProgram {
 		
 		menu = new MenuPane(this);
 		highScorePane = new HighScoreMenu(this);
-		//game = new PlayPane(this);
+		game = new PlayPane(this);
 		titleScreen = new TitleScreenPane(this);
 		
 		//switchToMenu();

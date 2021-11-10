@@ -1,6 +1,10 @@
 import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.event.MouseEvent;
 
 import acm.graphics.GImage;
+import acm.graphics.GLabel;
+import acm.graphics.GObject;
 
 public class PlayPane extends GraphicsPane {
 	private MainApplication program; 
@@ -37,12 +41,16 @@ public class PlayPane extends GraphicsPane {
 		//define all starting states here
 		player = new PlayerCar(START_X, START_Y);
 		playerCar = new GImage(player.getFileName(),player.getSpace().getX(),player.getSpace().getY());
-		
-		while (!gameOver){
-			if(System.nanoTime()-startTime > gameTick){
-				//update, priority: player > enemy > ui
-			}
-		}
+
+		run();
+	}
+	
+	public void run() {
+//		while (!gameOver){
+//			if(System.nanoTime()-startTime > gameTick){
+//				//update, priority: player > enemy > ui
+//			}
+//		}
 	}
 	
 	@Override
