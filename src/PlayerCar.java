@@ -9,7 +9,7 @@ public class PlayerCar extends Object{
 	int health;
 	
 	public void playerCar() { //needs to be finished
-		
+		fileName = "JeepB.png";
 	}
 	
 	public int getWidth() {
@@ -32,7 +32,8 @@ public class PlayerCar extends Object{
 		return health;
 	}
 	
-	public void update() {
-		
+	public void update(double x, double y) {
+		pos.setX(x);
+		pos.setY(y);
 	}
 }

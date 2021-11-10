@@ -9,5 +9,5 @@ abstract class Object{
   abstract int getWidth();
   abstract Space getSpace();
   abstract String getFileName();
-  abstract void update();
+  abstract void update(double x, double y);
 }

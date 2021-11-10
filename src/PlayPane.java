@@ -18,14 +18,21 @@ public class PlayPane extends GraphicsPane {
 	GImage background;
 	Powerup item;
 	
+	KeyHandler key;
+	
+	public static final int START_X = 400;
+	public static final int START_Y = 300;
+	
 	//GUI UI; add this to update the game's labels
 	
-	public void run() {
+	public PlayPane(MainApplication mainApplication) {
 		//define all starting states here
+		player.update(START_X, START_Y);
+		
 		while (!gameOver){
-//			if(System.nanotime()-startTime > gametick){
-//				//update, priority: player > enemy > ui
-//			}
+			if(System.nanoTime()-startTime > gameTick){
+				//update, priority: player > enemy > ui
+			}
 		}
 	}
 	
