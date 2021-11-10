@@ -41,14 +41,13 @@ public class PlayPane extends GraphicsPane {
 		//define all starting states here
 		player = new PlayerCar(START_X, START_Y);
 		playerCar = new GImage(player.getFileName(),player.getSpace().getX(),player.getSpace().getY());
-
-		run();
 	}
 	
 	public void run() {
 //		while (!gameOver){
 //			if(System.nanoTime()-startTime > gameTick){
 //				//update, priority: player > enemy > ui
+//				System.out.println("test");
 //			}
 //		}
 	}
