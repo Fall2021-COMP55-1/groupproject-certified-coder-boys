@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import acm.graphics.GImage;
 
 public class PlayPane extends GraphicsPane {
+	private MainApplication program; 
+	
 	boolean gameOver = false;
 	
 	// game loop
@@ -14,20 +16,27 @@ public class PlayPane extends GraphicsPane {
 	//long lastFrame = startTime;
 	
 	ArrayList<EnemyCar> enemies;
+	
 	PlayerCar player;
+	GImage playerCar;
+	
 	GImage background;
 	Powerup item;
 	
 	KeyHandler key;
 	
-	public static final int START_X = 400;
-	public static final int START_Y = 300;
+	public static final double START_X = 400;
+	public static final double START_Y = 300;
 	
 	//GUI UI; add this to update the game's labels
 	
-	public PlayPane(MainApplication mainApplication) {
+	public PlayPane(MainApplication app) {
+		super();
+		program = app;
+		
 		//define all starting states here
-		player.update(START_X, START_Y);
+		player = new PlayerCar(START_X, START_Y);
+		playerCar = new GImage(player.getFileName(),player.getSpace().getX(),player.getSpace().getY());
 		
 		while (!gameOver){
 			if(System.nanoTime()-startTime > gameTick){
@@ -38,12 +47,12 @@ public class PlayPane extends GraphicsPane {
 	
 	@Override
 	public void showContents() {
-		// TODO Auto-generated method stub
-
+		program.add(playerCar);
 	}
 
 	@Override
 	public void hideContents() {
+		program.remove(playerCar);
 		// TODO Auto-generated method stub
 
 	}

@@ -49,7 +49,9 @@ public class EnemyCar extends Object implements ActionListener{
 		return fileName;
 	}
 
-	void update() {
+	@Override
+	void update(double x, double y) {
+		// TODO Auto-generated method stub
 		
 	}
 }

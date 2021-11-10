@@ -16,7 +16,8 @@ public class TitleScreenPane extends GraphicsPane {
 	private GImage tScreen;
 
 	public TitleScreenPane(MainApplication app) {
-		this.program = app;
+		super();
+		program = app;
 		//img = new GImage("robot head.jpg", 100, 100);
 		//para = new GParagraph("welcome\nto my\nsecret room!", 150, 300);
 		//para.setFont("Arial-24");

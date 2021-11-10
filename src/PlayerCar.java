@@ -8,8 +8,11 @@ public class PlayerCar extends Object{
 	Space pos;
 	int health;
 	
-	public void playerCar() { //needs to be finished
-		fileName = "JeepB.png";
+	public PlayerCar(double x, double y) { //needs to be finished
+		pos = new Space();
+		pos.setX(x);
+		pos.setY(y);
+		fileName = "AssetImages/JeepB.png";
 	}
 	
 	public int getWidth() {

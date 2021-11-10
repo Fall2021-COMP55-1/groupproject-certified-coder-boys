@@ -7,6 +7,11 @@ class Space{
     this.y = y;
   }
   
+  public Space() {
+	  x = 0;
+	  y = 0;
+  }
+  
   public void setX(double x) {
 	  this.x = x;
   }
