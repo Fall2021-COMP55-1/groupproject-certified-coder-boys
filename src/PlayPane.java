@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import acm.graphics.GImage;
 import acm.graphics.GLabel;
 import acm.graphics.GObject;
+import acm.graphics.GRect;
 
 public class PlayPane extends GraphicsPane implements ActionListener {
 	private MainApplication program; 
@@ -67,5 +68,16 @@ public class PlayPane extends GraphicsPane implements ActionListener {
 		player.update(100,100);
 		//update map
 		//update enemies
+	}
+	
+	public boolean collision(GRect boxA, GRect boxB) {
+		double minX = boxA.getX();
+		double minY = boxA.getY();
+		double maxX = minX + boxA.getWidth();
+		double maxY = minY + boxA.getHeight();
+		
+		if(boxB.getX() > maxX || minX > boxB.getX() + boxB.getWidth()) return false;
+		if(boxB.getY() > maxY || minY > boxB.getY() + boxB.getHeight()) return false;
+		return true;
 	}
 }
