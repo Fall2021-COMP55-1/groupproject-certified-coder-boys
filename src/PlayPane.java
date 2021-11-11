@@ -1,18 +1,23 @@
 import java.util.ArrayList;
+
+import javax.swing.Timer;
+
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
 import acm.graphics.GImage;
 import acm.graphics.GLabel;
 import acm.graphics.GObject;
 
-public class PlayPane extends GraphicsPane {
+public class PlayPane extends GraphicsPane implements ActionListener {
 	private MainApplication program; 
 	
 	boolean gameOver = false;
 	
 	// game loop
-	
+	private Timer timer;
 	
 	ArrayList<EnemyCar> enemies;
 	
@@ -42,19 +47,12 @@ public class PlayPane extends GraphicsPane {
 		playerCar = new GImage(player.getFileName(),player.getSpace().getX(),player.getSpace().getY());
 	}
 	
-	public void run() {
-//		while (!gameOver){
-//			if(System.nanoTime()-startTime > gameTick){
-//				//update, priority: player > enemy > ui
-//				System.out.println("test");
-//			}
-//		}
-	}
-	
 	@Override
 	public void showContents() {
 		program.add(background);
 		program.add(playerCar);
+		timer = new Timer(10, this);
+		timer.start();
 	}
 
 	@Override
@@ -62,5 +60,12 @@ public class PlayPane extends GraphicsPane {
 		program.remove(playerCar);
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		player.update(100,100);
+		//update map
+		//update enemies
 	}
 }
