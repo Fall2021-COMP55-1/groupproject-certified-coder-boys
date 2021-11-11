@@ -133,7 +133,7 @@ public class MainApplication extends GraphicsProgram {
 	
 	public void switchToGame() {
 		switchToScreen(game);
-		game.run();
+		//game.run();
 	}
 	
 
