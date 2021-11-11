@@ -71,6 +71,9 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if(paused) {
+			return;
+		}
 		player.update(100,100);
 		//update map
 		//update enemies
