@@ -12,12 +12,7 @@ public class PlayPane extends GraphicsPane {
 	boolean gameOver = false;
 	
 	// game loop
-	long startTime = System.nanoTime();
-	//long frametick = 1000000000/60;
-	long gameTick = 1000000000/60;
-	long lastTick = startTime;
-	long enemyTick = 1000000000/5000; // for enemy spawn and can change this around
-	//long lastFrame = startTime;
+	
 	
 	ArrayList<EnemyCar> enemies;
 	
@@ -25,6 +20,7 @@ public class PlayPane extends GraphicsPane {
 	GImage playerCar;
 	
 	GImage background;
+	GImage road;
 	Powerup item;
 	
 	KeyHandler key;
@@ -39,6 +35,9 @@ public class PlayPane extends GraphicsPane {
 		program = app;
 		
 		//define all starting states here
+		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
+		background.setSize(800,600);
+		
 		player = new PlayerCar(START_X, START_Y);
 		playerCar = new GImage(player.getFileName(),player.getSpace().getX(),player.getSpace().getY());
 	}
@@ -54,6 +53,7 @@ public class PlayPane extends GraphicsPane {
 	
 	@Override
 	public void showContents() {
+		program.add(background);
 		program.add(playerCar);
 	}
 
@@ -63,5 +63,4 @@ public class PlayPane extends GraphicsPane {
 		// TODO Auto-generated method stub
 
 	}
-
 }
