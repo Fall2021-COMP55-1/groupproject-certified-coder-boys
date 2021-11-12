@@ -34,9 +34,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	
 	GLabel pause;
 	
-	public static final double START_X = 400;
-	public static final double START_Y = 450;
-	
 	//GUI UI; add this to update the game's labels
 	
 	public PlayPane(MainApplication app) {
@@ -81,6 +78,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		player.update();
 		//update map
 		//update enemies
+		
+		//run through enemy array to check with collision function
 	}
 	
 	@Override
