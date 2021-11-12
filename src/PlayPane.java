@@ -81,10 +81,10 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
 		if(key == KeyEvent.VK_LEFT) {
-			//player.update(dx);
+			player.updateDX(-5);
 		}
 		else if(key == KeyEvent.VK_RIGHT) {
-			//player.update(dx);
+			player.updateDX(5);
 		}
 		else if(key == KeyEvent.VK_SPACE) {
 			//pauses game
