@@ -22,7 +22,6 @@ public class PlayPane extends GraphicsPane implements ActionListener {
 	ArrayList<EnemyCar> enemies;
 	
 	PlayerCar player;
-	GImage playerCar;
 	
 	GImage background;
 	GImage road;
@@ -31,33 +30,32 @@ public class PlayPane extends GraphicsPane implements ActionListener {
 	KeyHandler key;
 	
 	public static final double START_X = 400;
-	public static final double START_Y = 300;
+	public static final double START_Y = 450;
 	
 	//GUI UI; add this to update the game's labels
 	
 	public PlayPane(MainApplication app) {
 		super();
 		program = app;
-		
+		player = new PlayerCar(app, this);
 		//define all starting states here
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
-		
-		player = new PlayerCar(START_X, START_Y);
-		playerCar = new GImage(player.getFileName(),player.getSpace().getX(),player.getSpace().getY());
 	}
 	
 	@Override
 	public void showContents() {
 		program.add(background);
-		program.add(playerCar);
+		//program.add(playerCar);\
+		player.show();
 		timer = new Timer(10, this);
 		timer.start();
 	}
 
 	@Override
 	public void hideContents() {
-		program.remove(playerCar);
+		//program.remove(playerCar);
+		player.hide();
 		// TODO Auto-generated method stub
 
 	}
