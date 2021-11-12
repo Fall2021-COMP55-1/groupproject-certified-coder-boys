@@ -42,12 +42,14 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	public PlayPane(MainApplication app) {
 		super();
 		program = app;
-		player = new PlayerCar(app, this);
+		
 		//define all starting states here
+		player = new PlayerCar(app, this);
+		
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
 
-		GLabel pause = new GLabel("PAUSE", 100, 100);
+		pause = new GLabel("PAUSE", 100, 100);
 	}
 	
 	@Override
