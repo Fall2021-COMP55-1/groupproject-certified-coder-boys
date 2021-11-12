@@ -27,7 +27,7 @@ public class GameOver {
 		public MenuPane(MainApplication app) {
 			super();
 			program = app;
-			rect = new GButton("Next", app.getWidth()/2-BUTTON_SIZE/2, app.getHeight()/2-BUTTON_SIZE/2, BUTTON_SIZE, BUTTON_SIZE);
+			rect = new GButton("Play again", app.getWidth()/2-BUTTON_SIZE/2, app.getHeight()/2-BUTTON_SIZE/2, BUTTON_SIZE, BUTTON_SIZE);
 			rect2 = new GButton("High Score", 300, 300, BUTTON_SIZE, BUTTON_SIZE);
 			rect.setFillColor(Color.RED);
 			rect2.setFillColor(Color.RED);
