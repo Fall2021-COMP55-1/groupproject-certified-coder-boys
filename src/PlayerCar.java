@@ -52,6 +52,9 @@ public class PlayerCar extends Object{
 		if(car.getX() + dx < 0) {
 			dx = 0; // adjust based on road
 		}
+		else if(car.getX()+dx > 800-car.getWidth()) {
+			dx = 0;
+		}
 		car.move(dx, 0);
 	}
 	public void show() {
