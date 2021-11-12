@@ -48,6 +48,9 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
+		
+		road = new GImage("AssetImages/road.jpg",150,0);
+		road.setSize(500,600);
 
 		pause = new GLabel("PAUSE", 100, 100);
 	}
@@ -55,6 +58,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	@Override
 	public void showContents() {
 		program.add(background);
+		program.add(road);
 		//program.add(playerCar);\
 		player.show();
 		timer = new Timer(10, this);
@@ -74,7 +78,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		if(paused) {
 			return;
 		}
-		player.update(100,100);
+		player.update();
 		//update map
 		//update enemies
 	}
@@ -93,6 +97,10 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 			paused = !paused;
 			showPaused();
 		}
+	}
+	
+	public void keyReleased(KeyEvent e) {
+		player.stopDX();
 	}
 	
 	public void showPaused() {

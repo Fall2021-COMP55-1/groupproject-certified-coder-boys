@@ -45,18 +45,39 @@ public class PlayerCar extends Object{
 		return health;
 	}
 	public void updateDX(int x) {
-		dx += x;
+		if(x < 0 && dx > 0)
+			dx = -5;
+		else if(x > 0 && dx < 0)
+			dx = 5;
+		else if((x >= 0 && dx <= 0) || (x <= 0 && dx >= 0))
+			dx += x;
 	}
 	
-	public void update(double x, double y) {
-		if(car.getX() + dx < 0) {
-			dx = 0; // adjust based on road
+	public void stopDX() {
+		if(dx<0) {
+			while(dx!=0)
+				dx++;
 		}
-		else if(car.getX()+dx > 800-car.getWidth()) {
+		else if(dx>0) {
+			while(dx!=0)
+				dx--;
+		}
+	}
+	
+	public void update() {
+		if(car.getX() + dx < 150) {
+			dx = 0;
+		}
+		else if(car.getX()+dx > 650-car.getWidth()) {
 			dx = 0;
 		}
 		car.move(dx, 0);
 	}
+	
+	public void update(double x, double y) {
+		
+	}
+	
 	public void show() {
 		program.add(car);
 	}
