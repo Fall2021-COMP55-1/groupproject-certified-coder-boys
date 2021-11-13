@@ -53,7 +53,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		score = "0";
 		scoreLabel = new GLabel(score, 100, 200);
 		scoreLabel.setFont("Arial-Bold-30");
-		scoreLabel.setColor(Color.WHITE);
+		scoreLabel.setColor(Color.YELLOW);
 		
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
