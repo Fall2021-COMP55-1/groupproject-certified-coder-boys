@@ -30,9 +30,16 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GImage road;
 	Powerup item;
 	
+	String score;
+	
+	GLabel scoreLabel;
+	GLabel level;
+	
 	boolean paused;
 	
 	GLabel pause;
+	
+	long startTime = System.currentTimeMillis();
 	
 	//GUI UI; add this to update the game's labels
 	
@@ -42,6 +49,9 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		//define all starting states here
 		player = new PlayerCar(app, this);
+		
+		score = "0";
+		scoreLabel = new GLabel(score, 200, 200);
 		
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
@@ -56,6 +66,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	public void showContents() {
 		program.add(background);
 		program.add(road);
+		program.add(scoreLabel);
 		//program.add(playerCar);\
 		player.show();
 		timer = new Timer(10, this);
@@ -76,10 +87,18 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 			return;
 		}
 		player.update();
+		
 		//update map
 		//update enemies
+		//update labels
+		score = String.valueOf((System.currentTimeMillis()-startTime)/1000);
+		scoreLabel.setLabel(score);
+		System.out.println(score);
 		
 		//run through enemy array to check with collision function
+//		for(EnemyCar enemy : enemies) {
+//			
+//		}
 	}
 	
 	@Override
