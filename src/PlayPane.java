@@ -51,7 +51,9 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		player = new PlayerCar(app, this);
 		
 		score = "0";
-		scoreLabel = new GLabel(score, 200, 200);
+		scoreLabel = new GLabel(score, 100, 200);
+		scoreLabel.setFont("Arial-Bold-30");
+		scoreLabel.setColor(Color.WHITE);
 		
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
@@ -86,6 +88,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		if(paused) {
 			return;
 		}
+		
 		player.update();
 		
 		//update map
@@ -93,7 +96,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		//update labels
 		score = String.valueOf((System.currentTimeMillis()-startTime)/1000);
 		scoreLabel.setLabel(score);
-		System.out.println(score);
 		
 		//run through enemy array to check with collision function
 //		for(EnemyCar enemy : enemies) {
