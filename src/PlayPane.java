@@ -109,6 +109,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		levelCounter();
 		levelLabel.setLabel(level);
 		
+		//check health
+		
 		//run through enemy array to check with collision function
 //		for(EnemyCar enemy : enemies) {
 //			
