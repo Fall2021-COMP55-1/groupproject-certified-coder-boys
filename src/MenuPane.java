@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 
 import acm.graphics.GObject;
+import acm.graphics.GImage;
 
 public class MenuPane extends GraphicsPane {
 	
@@ -12,6 +13,7 @@ public class MenuPane extends GraphicsPane {
 	private GButton rect2;
 	private GButton rect3;
 	private GButton rect4;
+	private GImage menu;
 	private final int BUTTON_SIZE = 50;
 
 	public MenuPane(MainApplication app) {
@@ -21,6 +23,7 @@ public class MenuPane extends GraphicsPane {
 		rect2 = new GButton("High Score", 300, 300, BUTTON_SIZE, BUTTON_SIZE);
 		rect3 = new GButton("Play", 200, 200, BUTTON_SIZE, BUTTON_SIZE);
 		rect4 = new GButton("Exit", 400, 400, BUTTON_SIZE, BUTTON_SIZE);
+		menu = new GImage("AssetImages/Menu.png",0,0);
 		rect.setFillColor(Color.RED);
 		rect2.setFillColor(Color.RED);
 		rect3.setFillColor(Color.orange);
@@ -29,6 +32,7 @@ public class MenuPane extends GraphicsPane {
 
 	@Override
 	public void showContents() {
+		program.add(menu);
 		program.add(rect);
 		program.add(rect2);
 		program.add(rect3);
@@ -37,6 +41,7 @@ public class MenuPane extends GraphicsPane {
 
 	@Override
 	public void hideContents() {
+		program.remove(menu);
 		program.remove(rect);
 		program.remove(rect2);
 		program.remove(rect3);
