@@ -1,6 +1,8 @@
 import java.awt.event.*;
 import javax.swing.*;
 
+import acm.graphics.GImage;
+
 public class EnemyCar extends Object implements ActionListener{
 	/*
 	 * Sets the enemy’s speed, width, height, filename, and Space.  
@@ -9,23 +11,33 @@ public class EnemyCar extends Object implements ActionListener{
 	
 	// below are the variables that will be needed
 	private double speed;
-	private Space pos;
 	private String fileName;
 	private int width;
 	private int height;
+	private double x;
+	private double y;
+	private double dy;
 	private Timer enemyTimer = new Timer(1000, this); // timer that can/will be adjusted
-	
+	private MainApplication program;
+	private PlayPane game;
+	private GImage car;
 	
 	public void actionPerformed(ActionEvent e) { // added an actionPerformed function for timer
 		enemyTimer.stop();
 	}
 	
-	public void run() { // added a run function to start timer and gave it a delay will be adjusted later can also change this into spawn function
-		enemyTimer.setInitialDelay(1000);
-		enemyTimer.start();
-		
-	}
-	public void enemyCar (int level) { // finish this function
+//	public void run() { // added a run function to start timer and gave it a delay will be adjusted later can also change this into spawn function
+//		enemyTimer.setInitialDelay(1000);
+//		enemyTimer.start();
+//		
+//	}
+	public EnemyCar(MainApplication app, PlayPane pane) { // finish this function
+		x = 400;
+		y = 300;
+		dy = 2;
+		program = app;
+		fileName = "AssetImages/JeepB.png";
+		car = new GImage(fileName,x,y);
 		
 	}
 	
@@ -53,5 +65,11 @@ public class EnemyCar extends Object implements ActionListener{
 	void update(double x, double y) {
 		// TODO Auto-generated method stub
 		
+	}
+	public void show() {
+		program.add(car); // adds one car right now
+	}
+	public void hide() {
+		program.remove(car);
 	}
 }
