@@ -20,14 +20,17 @@ public class MenuPane extends GraphicsPane {
 		super();
 		program = app;
 		rect = new GButton("Next", app.getWidth()/2-BUTTON_SIZE/2, app.getHeight()/2-BUTTON_SIZE/2, BUTTON_SIZE, BUTTON_SIZE);
-		rect2 = new GButton("High Score", 300, 300, BUTTON_SIZE, BUTTON_SIZE);
-		rect3 = new GButton("Play", 200, 200, BUTTON_SIZE, BUTTON_SIZE);
-		rect4 = new GButton("Exit", 400, 400, BUTTON_SIZE, BUTTON_SIZE);
+		rect2 = new GButton("", 275, 227, 248, 248);
+		rect3 = new GButton("", 10, 227, 248, 248);
+		rect4 = new GButton("", 540, 227, 248, 248);
 		menu = new GImage("AssetImages/Menu.png",0,0);
 		rect.setFillColor(Color.RED);
 		rect2.setFillColor(Color.RED);
+		rect2.setVisible(false);
 		rect3.setFillColor(Color.orange);
+		rect3.setVisible(false);
 		rect4.setFillColor(Color.yellow);
+		rect4.setVisible(false);
 	}
 
 	@Override
