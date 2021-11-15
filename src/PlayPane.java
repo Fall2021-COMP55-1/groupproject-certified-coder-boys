@@ -30,10 +30,13 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GImage road;
 	Powerup item;
 	
-	String score;
+	long score;
+	String level;
+	
+	String scoreString;
 	
 	GLabel scoreLabel;
-	GLabel level;
+	GLabel levelLabel;
 	
 	boolean paused;
 	
@@ -49,11 +52,15 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		//define all starting states here
 		player = new PlayerCar(app, this);
-		
-		score = "Score: 0";
-		scoreLabel = new GLabel(score, 100, 200);
+
+		scoreLabel = new GLabel("Score: 0", 0, 200);
 		scoreLabel.setFont("Arial-Bold-22");
 		scoreLabel.setColor(Color.YELLOW);
+		
+		level = "Level: 1";
+		levelLabel = new GLabel(level, 0, scoreLabel.getY()+scoreLabel.getHeight());
+		levelLabel.setFont("Arial-Bold-22");
+		levelLabel.setColor(Color.YELLOW);
 		
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
@@ -69,7 +76,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.add(background);
 		program.add(road);
 		program.add(scoreLabel);
-		//program.add(playerCar);\
+		program.add(levelLabel);
 		player.show();
 		timer = new Timer(10, this);
 		timer.start();
@@ -95,14 +102,47 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		//update map
 		//update enemies
 		//update labels
-		score = String.valueOf("Score: "+(System.currentTimeMillis()-startTime)/1000);
-		scoreLabel.setLabel(score);
-		scoreLabel.setLocation(0, 200);
+		score = (System.currentTimeMillis()-startTime)/1000;
+		scoreString = String.valueOf("Score: "+score);
+		scoreLabel.setLabel(scoreString);
+		
+		levelCounter();
+		levelLabel.setLabel(level);
 		
 		//run through enemy array to check with collision function
 //		for(EnemyCar enemy : enemies) {
 //			
 //		}
+	}
+	
+	public void levelCounter() {
+		if(score==30){
+			level = "Level: 2";
+		}
+		else if(score==60) {
+			level = "Level: 3";
+		}
+		else if(score==90) {
+			level = "Level: 4";
+		}
+		else if(score==120) {
+			level = "Level: 5";
+		}
+		else if(score==150) {
+			level = "Level: 6";
+		}
+		else if(score==180) {
+			level = "Level: 7";
+		}
+		else if(score==210) {
+			level = "Level: 8";
+		}
+		else if(score==240) {
+			level = "Level: 9";
+		}
+		else if(score==270) {
+			level = "Level: 10";
+		}
 	}
 	
 	@Override
@@ -121,6 +161,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		}
 	}
 	
+	@Override
 	public void keyReleased(KeyEvent e) {
 		player.stopDX();
 	}
