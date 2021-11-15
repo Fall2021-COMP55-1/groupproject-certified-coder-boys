@@ -21,8 +21,9 @@ public class PlayerCar extends Object{
 		y = 450;
 		dx = 0;
 		program = app;
-		fileName = "AssetImages/JeepB.png";
+		fileName = "AssetImages/SuperB.png";
 		car = new GImage(fileName,x,y);
+		car.setSize(60,120);
 	}
 	
 	public int getWidth() {
