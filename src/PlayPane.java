@@ -39,7 +39,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	
 	GLabel pause;
 	
-	long startTime = System.currentTimeMillis();
+	long startTime;
 	
 	//GUI UI; add this to update the game's labels
 	
@@ -73,6 +73,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		player.show();
 		timer = new Timer(10, this);
 		timer.start();
+		startTime = System.currentTimeMillis();
 	}
 
 	@Override
