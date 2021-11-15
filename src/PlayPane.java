@@ -78,7 +78,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.add(scoreLabel);
 		program.add(levelLabel);
 		player.show();
-		enemy.show();
+		enemy.show(); // only shows one car rn
 		timer = new Timer(10, this);
 		timer.start();
 		startTime = System.currentTimeMillis();

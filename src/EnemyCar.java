@@ -67,7 +67,7 @@ public class EnemyCar extends Object implements ActionListener{
 		
 	}
 	public void show() {
-		program.add(car);
+		program.add(car); // adds one car right now
 	}
 	public void hide() {
 		program.remove(car);
