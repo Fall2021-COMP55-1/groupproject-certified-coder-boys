@@ -36,7 +36,7 @@ public class MenuPane extends GraphicsPane {
 	@Override
 	public void showContents() {
 		program.add(menu);
-		program.add(rect);
+		//program.add(rect);
 		program.add(rect2);
 		program.add(rect3);
 		program.add(rect4);
@@ -45,7 +45,7 @@ public class MenuPane extends GraphicsPane {
 	@Override
 	public void hideContents() {
 		program.remove(menu);
-		program.remove(rect);
+		//program.remove(rect);
 		program.remove(rect2);
 		program.remove(rect3);
 		program.remove(rect4);
