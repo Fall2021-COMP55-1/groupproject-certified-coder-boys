@@ -35,6 +35,6 @@ public class Traffic {
 	}
 	
 	public void increaseDifficulty() {
-		// reads timer from game and will increases spawn speed, car speed, etc. for enemy cars
+		// reads timer from game and will increases spawn speed, car speed, etc. for the enemy cars
 	}
 }
