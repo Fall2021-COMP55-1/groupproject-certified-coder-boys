@@ -25,7 +25,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	ArrayList<EnemyCar> enemies;
 	
 	PlayerCar player;
-	
+	EnemyCar enemy;
 	GImage background;
 	GImage road;
 	Powerup item;
@@ -52,7 +52,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		//define all starting states here
 		player = new PlayerCar(app, this);
-
+		enemy = new EnemyCar(app, this);
 		scoreLabel = new GLabel("Score: 0", 0, 200);
 		scoreLabel.setFont("Arial-Bold-22");
 		scoreLabel.setColor(Color.YELLOW);
@@ -78,6 +78,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.add(scoreLabel);
 		program.add(levelLabel);
 		player.show();
+		enemy.show();
 		timer = new Timer(10, this);
 		timer.start();
 		startTime = System.currentTimeMillis();
