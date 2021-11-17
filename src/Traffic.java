@@ -43,22 +43,22 @@ public class Traffic {
 		double y = 300;
 		
 		if(diff < 15) {
+			//chooses random position for car
 			roll = rand.nextInt() % 3;
-			roll = 0;
 			switch(roll) {
 			case 0:
 			  x = 400;
-			  y = 300;
+			  y = 0;
 			 break;
 			
 			case 1:
-				 x = 400;
-				 y = 300;
+				 x = 300;
+				 y = 0;
 				break;
 				
 			case 2:
-				 x = 400;
-				 y = 300;
+				 x = 500;
+				 y = 0;
 				break;
 			}
 			car = new EnemyCar(app, game, 0.0, 2.0, x, y);
