@@ -31,6 +31,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	Powerup item;
 	
 	long score;
+	long totalTime = 0;
 	String level;
 	
 	String scoreString;
@@ -102,7 +103,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		//update map
 		//update enemies
 		//update labels
-		score = (System.currentTimeMillis()-startTime)/1000;
+		score = ((System.currentTimeMillis()-startTime)/1000)+totalTime;
 		scoreString = String.valueOf("Score: "+score);
 		scoreLabel.setLabel(scoreString);
 		
@@ -171,9 +172,11 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	public void showPaused() {
 		if(paused) {
 			program.add(pause);
+			totalTime = (System.currentTimeMillis()-startTime)/1000;
 		}
 		else {
 			program.remove(pause);
+			startTime = System.currentTimeMillis();
 		}
 	}
 	
