@@ -1,26 +1,72 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 
 
 
 public class Traffic {
 	ArrayList<EnemyCar> cars;
 	
-	private int delay = 400;
+	private int delay = 0;
+	private int delayDefault = 400;
+	private int diff = 1;
+	EnemyCar car;
+	// add the three lane x and y values
+	private Random rand = new Random();
+	MainApplication app;
+	PlayPane game;
 	
-	
-	public Traffic(MainApplication program, GraphicsPane game) {
+	public Traffic(MainApplication program, PlayPane game) {
 		// TODO Auto-generated constructor stub
 		cars = new ArrayList <EnemyCar>();
+		app = program;
+		this.game = game;
 		
 	}
 	
 	public void update() {
 		delay --;
-		if(delay == 0) {
-			//makeCar();
-			//delay = delayDefault;
+		if(cars.size() != 0) {
+			for(int i = 0; i < cars.size(); i++) {
+					cars.get(i).update();	
 		}
+		
+		}
+		
+		if(delay != 0) {
+			return;
+		}
+		
+		delay = delayDefault;
+		int roll;
+		 double x = 400;
+		 double y = 300;
+		
+		if(diff < 15) {
+			roll = rand.nextInt() % 3;
+			roll = 0;
+			switch(roll) {
+			case 0:
+			  x = 400;
+			  y = 300;
+			 break;
+			
+			case 1:
+				 x = 400;
+				 y = 300;
+				break;
+				
+			case 2:
+				 x = 400;
+				 y = 300;
+				break;
+			}
+			car = new EnemyCar(app, game, 0.0, 2.0, x, y);
+			cars.add(car);
+			car.show();
+		}
+		
+		
 //		Iterator<EnemyCar> iter = EnemyCar.iterator();
 //		while(iter.hasNext()) {
 //			enemyCarTemp = iter.next();
@@ -36,5 +82,21 @@ public class Traffic {
 	
 	public void increaseDifficulty() {
 		// reads timer from game and will increases spawn speed, car speed, etc. for the enemy cars
+	}
+	public void show() {
+		if(cars.size() == 0) {
+			return;
+		}
+		for(int i = 0; i < cars.size(); i++) {
+			cars.get(i).show();
+		}
+	}
+	public void hide() {
+		if(cars.size() == 0) {
+			return;
+		}
+		for(int i = 0; i < cars.size(); i++) {
+			cars.get(i).hide();
+		}
 	}
 }

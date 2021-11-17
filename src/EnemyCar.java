@@ -1,4 +1,6 @@
 import java.awt.event.*;
+import java.util.Random;
+
 import javax.swing.*;
 
 import acm.graphics.GImage;
@@ -16,6 +18,7 @@ public class EnemyCar extends Object implements ActionListener{
 	private int height;
 	private double x;
 	private double y;
+	private double dx;
 	private double dy;
 	private Timer enemyTimer = new Timer(1000, this); // timer that can/will be adjusted
 	private MainApplication program;
@@ -31,11 +34,17 @@ public class EnemyCar extends Object implements ActionListener{
 //		enemyTimer.start();
 //		
 //	}
-	public EnemyCar(MainApplication app, PlayPane pane) { // finish this function
-		x = 400;
-		y = 300;
-		dy = 2;
+	
+	public EnemyCar(MainApplication app, PlayPane pane, double dx, double dy, double x, double y) { // finish this function
+		//x = 400;
+		//y = 300;
+		Random rand = new Random();
 		program = app;
+		int roll = rand.nextInt() % 5;
+		switch(roll) {
+			case 0:
+				// the filenames
+		}
 		fileName = "AssetImages/JeepB.png";
 		car = new GImage(fileName,x,y);
 		
@@ -61,8 +70,9 @@ public class EnemyCar extends Object implements ActionListener{
 		return fileName;
 	}
 
-	@Override
-	void update(double x, double y) {
+	
+	void update() {
+		car.move(dx, dy);
 		// TODO Auto-generated method stub
 		
 	}
