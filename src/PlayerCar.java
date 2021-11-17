@@ -42,6 +42,10 @@ public class PlayerCar extends Object{
 		return fileName;
 	}
 	
+	public GImage getImage() {
+		return car;
+	}
+	
 	public int getHealth() {
 		return health;
 	}

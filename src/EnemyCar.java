@@ -74,6 +74,9 @@ public class EnemyCar extends Object implements ActionListener{
 		return fileName;
 	}
 
+	public GImage getImage() {
+		return car;
+	}
 	
 	void update() {
 		car.move(dx, dy);

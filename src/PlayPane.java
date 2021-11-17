@@ -22,7 +22,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	// game loop
 	private Timer timer;
 	
-	ArrayList<EnemyCar> enemies;
+	ArrayList<EnemyCar> cars;
 	
 	PlayerCar player;
 	EnemyCar enemy;
@@ -105,6 +105,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		player.update();
 		traf.update();
 		
+		cars = traf.getCars();
+		
 		//update map
 		//update enemies
 		//update labels
@@ -118,9 +120,10 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		//check health
 		
 		//run through enemy array to check with collision function
-//		for(EnemyCar enemy : enemies) {
-//			
-//		}
+		for(EnemyCar enemy : cars) {
+			if(collision(player.getImage(), enemy.getImage()))
+				System.out.println("OUCH!");
+		}
 	}
 	
 	public void levelCounter() {
@@ -185,7 +188,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		}
 	}
 	
-	public boolean collision(GRect boxA, GRect boxB) {
+	public boolean collision(GImage boxA, GImage boxB) {
 		double minX = boxA.getX();
 		double minY = boxA.getY();
 		double maxX = minX + boxA.getWidth();

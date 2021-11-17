@@ -80,6 +80,10 @@ public class Traffic {
 		//}
 	}
 	
+	public ArrayList<EnemyCar> getCars(){
+		return cars;
+	}
+	
 	public void increaseDifficulty() {
 		// reads timer from game and will increases spawn speed, car speed, etc. for the enemy cars
 	}
