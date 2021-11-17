@@ -69,7 +69,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
 		
-		road = new GImage("AssetImages/road.jpg",150,0);
+		road = new GImage("AssetImages/vapor road.gif",150,0);
 		road.setSize(500,600);
 
 		pause = new GLabel("PAUSE", 100, 100);
