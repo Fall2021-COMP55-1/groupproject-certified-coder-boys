@@ -17,6 +17,7 @@ public class HighScore {
 	String names[];
 	String list;
 	Scanner reader;
+	File data;
 	
 	//constructor
 	public HighScore() {
@@ -24,7 +25,7 @@ public class HighScore {
 		names = new String[10];
 		
 		//text file contains all of the scores in a single line
-		File data = new File("HighScores.txt");
+		data = new File("HighScores.txt");
 		try {
 			reader = new Scanner(data);
 			list = reader.nextLine();
@@ -62,7 +63,9 @@ public class HighScore {
 			return false;
 	}
 	
-	public void newHighScore(String name, int score) {
+	public void newHighScore(String name, int score) throws IOException {
+		FileWriter fw = new FileWriter(data);
+		
 		if(checkHighScore(name, score)) {
 			names[0] = name;
 			scores[0] = score;
@@ -70,6 +73,11 @@ public class HighScore {
 			sort();
 			
 			//********STILL NEED TO REWRITE TXT FILE********
+			for(int i = 0; i<10; i++) {
+				fw.write(names[i]);
+				fw.write(Integer.toString(scores[i]));
+			}
+			fw.close();
 		}
 	}
 	
@@ -111,7 +119,12 @@ public class HighScore {
 		
 		o.print();
 		
-		o.newHighScore("Dababy", 999999);
+		try {
+			o.newHighScore("Dababy", 999999);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("DIDNT WORK");
+		}
 		
 		System.out.println("INSERTING: Dababy, 999999");
 		o.print();
