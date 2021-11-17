@@ -57,47 +57,47 @@ public class HighScoreMenu extends GraphicsPane {
 		score1.setFont(FONT);
 		score1.setLocation(WINDOW_WIDTH/2-score1.getWidth()/2, 180);
 		
-		score2 = new GLabel(names[8]+" .......... "+scores[9], 100, 150);
+		score2 = new GLabel(names[8]+" .......... "+scores[8], 100, 150);
 		score2.setColor(Color.white);
 		score2.setFont(FONT);
 		score2.setLocation(WINDOW_WIDTH/2-score2.getWidth()/2, score1.getY()+40);
 		
-		score3 = new GLabel(names[7]+" .......... "+scores[9], 100, 200);
+		score3 = new GLabel(names[7]+" .......... "+scores[7], 100, 200);
 		score3.setColor(Color.white);
 		score3.setFont(FONT);
 		score3.setLocation(WINDOW_WIDTH/2-score3.getWidth()/2, score2.getY()+40);
 		
-		score4 = new GLabel(names[6]+" .......... "+scores[9], 100, 250);
+		score4 = new GLabel(names[6]+" .......... "+scores[6], 100, 250);
 		score4.setColor(Color.white);
 		score4.setFont(FONT);
 		score4.setLocation(WINDOW_WIDTH/2-score4.getWidth()/2, score3.getY()+40);
 		
-		score5 = new GLabel(names[5]+" .......... "+scores[9], 100, 300);
+		score5 = new GLabel(names[5]+" .......... "+scores[5], 100, 300);
 		score5.setColor(Color.white);
 		score5.setFont(FONT);
 		score5.setLocation(WINDOW_WIDTH/2-score5.getWidth()/2, score4.getY()+40);
 		
-		score6 = new GLabel(names[4]+" .......... "+scores[9], 100, 350);
+		score6 = new GLabel(names[4]+" .......... "+scores[4], 100, 350);
 		score6.setColor(Color.white);
 		score6.setFont(FONT);
 		score6.setLocation(WINDOW_WIDTH/2-score6.getWidth()/2, score5.getY()+40);
 		
-		score7 = new GLabel(names[3]+" .......... "+scores[9], 100, 400);
+		score7 = new GLabel(names[3]+" .......... "+scores[3], 100, 400);
 		score7.setColor(Color.white);
 		score7.setFont(FONT);
 		score7.setLocation(WINDOW_WIDTH/2-score7.getWidth()/2, score6.getY()+40);
 		
-		score8 = new GLabel(names[2]+" .......... "+scores[9], 100, 450);
+		score8 = new GLabel(names[2]+" .......... "+scores[2], 100, 450);
 		score8.setColor(Color.white);
 		score8.setFont(FONT);
 		score8.setLocation(WINDOW_WIDTH/2-score8.getWidth()/2, score7.getY()+40);
 		
-		score9 = new GLabel(names[1]+" .......... "+scores[9], 100, 500);
+		score9 = new GLabel(names[1]+" .......... "+scores[1], 100, 500);
 		score9.setColor(Color.white);
 		score9.setFont(FONT);
 		score9.setLocation(WINDOW_WIDTH/2-score9.getWidth()/2, score8.getY()+40);
 		
-		score10 = new GLabel(names[0]+" .......... "+scores[9], 100, 550);
+		score10 = new GLabel(names[0]+" .......... "+scores[0], 100, 550);
 		score10.setColor(Color.white);
 		score10.setFont(FONT);
 		score10.setLocation(WINDOW_WIDTH/2-score10.getWidth()/2, score9.getY()+40);

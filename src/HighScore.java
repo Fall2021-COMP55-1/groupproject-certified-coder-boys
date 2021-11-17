@@ -57,7 +57,7 @@ public class HighScore {
 	
 	public boolean checkHighScore(String name, int score) {
 		//checks the lowest score to see if the player reached the scoreboard
-		if(scores[9]<score)
+		if(scores[0]<score)
 			return true;
 		else
 			return false;
