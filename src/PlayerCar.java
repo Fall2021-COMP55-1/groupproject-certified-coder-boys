@@ -75,10 +75,6 @@ public class PlayerCar extends Object{
 		car.move(dx, 0);
 	}
 	
-	public void update(double x, double y) {
-		
-	}
-	
 	public void show() {
 		program.add(car);
 	}
