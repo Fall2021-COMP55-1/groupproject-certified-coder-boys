@@ -180,7 +180,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	public void showPaused() {
 		if(paused) {
 			program.add(pause);
-			totalTime = (System.currentTimeMillis()-startTime)/1000;
+			totalTime += (System.currentTimeMillis()-startTime)/1000;
 		}
 		else {
 			program.remove(pause);
