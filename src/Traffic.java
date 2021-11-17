@@ -44,20 +44,20 @@ public class Traffic {
 		
 		if(diff < 15) {
 			//chooses random position for car
-			roll = rand.nextInt() % 3;
+			roll = rand.nextInt(3) % 3;
 			switch(roll) {
 			case 0:
-			  x = 400;
+			  x = 400; //ADJUST
 			  y = 0;
 			 break;
 			
 			case 1:
-				 x = 300;
+				 x = 300; //ADJUST
 				 y = 0;
 				break;
 				
 			case 2:
-				 x = 500;
+				 x = 500; //ADJUST
 				 y = 0;
 				break;
 			}
