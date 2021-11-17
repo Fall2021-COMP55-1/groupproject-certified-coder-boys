@@ -48,8 +48,8 @@ public class SoundEffect {
 				
 		window.setVisible(true);
 			
-        // Our audio file name in the res folder
-//		clickSound = ".//res//filename.wav";
+         //Our audio file name in the res folder
+		clickSound = ".//res//filename.wav";
 
 
 	}
