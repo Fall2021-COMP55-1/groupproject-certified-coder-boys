@@ -38,16 +38,20 @@ public class EnemyCar extends Object implements ActionListener{
 	public EnemyCar(MainApplication app, PlayPane pane, double dx, double dy, double x, double y) { // finish this function
 		//x = 400;
 		//y = 300;
-		Random rand = new Random();
 		program = app;
+		
+		this.dx = dx;
+		this.dy = dy;
+		Random rand = new Random();
 		int roll = rand.nextInt() % 5;
+		
 		switch(roll) {
 			case 0:
 				// the filenames
 		}
+		
 		fileName = "AssetImages/JeepB.png";
 		car = new GImage(fileName,x,y);
-		
 	}
 	
 //	public EnemyCar spawn() { have to add a global enemyCar

@@ -25,7 +25,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	ArrayList<EnemyCar> enemies;
 	
 	PlayerCar player;
-	//EnemyCar enemy;
+	EnemyCar enemy;
 	GImage background;
 	GImage road;
 	Powerup item;
@@ -33,6 +33,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	long score;
 	long totalTime = 0;
 	String level;
+	
+	Traffic traf;
 	
 	String scoreString;
 	
@@ -50,6 +52,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	public PlayPane(MainApplication app) {
 		super();
 		program = app;
+		
+		traf = new Traffic(app, this);
 		
 		//define all starting states here
 		player = new PlayerCar(app, this);
@@ -99,6 +103,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		}
 		
 		player.update();
+		traf.update();
 		
 		//update map
 		//update enemies

@@ -2,12 +2,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
-
-
 public class Traffic {
 	ArrayList<EnemyCar> cars;
 	
-	private int delay = 0;
+	private int delay = 1;
 	private int delayDefault = 400;
 	private int diff = 1;
 	EnemyCar car;
@@ -21,26 +19,28 @@ public class Traffic {
 		cars = new ArrayList <EnemyCar>();
 		app = program;
 		this.game = game;
-		
 	}
 	
 	public void update() {
 		delay --;
+		
+		//update cars on board
 		if(cars.size() != 0) {
 			for(int i = 0; i < cars.size(); i++) {
 					cars.get(i).update();	
+			}
 		}
 		
-		}
-		
+		//doesn't spawn cars until delay hits 0
 		if(delay != 0) {
 			return;
 		}
 		
+		//restarts delay timer
 		delay = delayDefault;
 		int roll;
-		 double x = 400;
-		 double y = 300;
+		double x = 400;
+		double y = 300;
 		
 		if(diff < 15) {
 			roll = rand.nextInt() % 3;
@@ -83,6 +83,7 @@ public class Traffic {
 	public void increaseDifficulty() {
 		// reads timer from game and will increases spawn speed, car speed, etc. for the enemy cars
 	}
+	
 	public void show() {
 		if(cars.size() == 0) {
 			return;
@@ -91,6 +92,7 @@ public class Traffic {
 			cars.get(i).show();
 		}
 	}
+	
 	public void hide() {
 		if(cars.size() == 0) {
 			return;
