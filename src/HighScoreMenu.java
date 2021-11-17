@@ -16,7 +16,7 @@ public class HighScoreMenu extends GraphicsPane {
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
 	
-	public static final String FONT = "Arial-Bold-30";
+	public static final String FONT = "Arial-Bold-40";
 	
 	GImage menu;
 	
@@ -31,7 +31,7 @@ public class HighScoreMenu extends GraphicsPane {
 	GLabel score9;
 	GLabel score10;
 	
-	GButton back;
+	GImage back;
 
 	public HighScoreMenu(MainApplication app) {
 		super();
@@ -46,59 +46,61 @@ public class HighScoreMenu extends GraphicsPane {
 		menu = new GImage("AssetImages/high score menu.png",0,0);
 		menu.setSize(800,600);
 		
-		back = new GButton("BACK",100,100,100,100);
+		back = new GImage("AssetImages/back button.png", 0, 0);
+		back.setSize(100, 50);
+		back.setLocation(0, WINDOW_HEIGHT-back.getHeight());
 	}
 	
 	public void labels(){
-		score1 = new GLabel(names[9]+" "+scores[9], 100, 100);
-		score1.setLocation(WINDOW_WIDTH/2-score1.getWidth(), 150);
+		score1 = new GLabel(names[9]+" .......... "+scores[9], 100, 100);
 		score1.setColor(Color.white);
 		score1.setFont(FONT);
+		score1.setLocation(WINDOW_WIDTH/2-score1.getWidth()/2, 180);
 		
-		score2 = new GLabel(names[8]+" "+scores[9], 100, 150);
-		score2.setLocation(WINDOW_WIDTH/2-score2.getWidth(), score1.getY()+30);
+		score2 = new GLabel(names[8]+" .......... "+scores[9], 100, 150);
 		score2.setColor(Color.white);
 		score2.setFont(FONT);
+		score2.setLocation(WINDOW_WIDTH/2-score2.getWidth()/2, score1.getY()+40);
 		
-		score3 = new GLabel(names[7]+" "+scores[9], 100, 200);
-		score3.setLocation(WINDOW_WIDTH/2-score3.getWidth(), score2.getY()+30);
+		score3 = new GLabel(names[7]+" .......... "+scores[9], 100, 200);
 		score3.setColor(Color.white);
 		score3.setFont(FONT);
+		score3.setLocation(WINDOW_WIDTH/2-score3.getWidth()/2, score2.getY()+40);
 		
-		score4 = new GLabel(names[6]+" "+scores[9], 100, 250);
-		score4.setLocation(WINDOW_WIDTH/2-score4.getWidth(), score3.getY()+30);
+		score4 = new GLabel(names[6]+" .......... "+scores[9], 100, 250);
 		score4.setColor(Color.white);
 		score4.setFont(FONT);
+		score4.setLocation(WINDOW_WIDTH/2-score4.getWidth()/2, score3.getY()+40);
 		
-		score5 = new GLabel(names[5]+" "+scores[9], 100, 300);
-		score5.setLocation(WINDOW_WIDTH/2-score5.getWidth(), score4.getY()+30);
+		score5 = new GLabel(names[5]+" .......... "+scores[9], 100, 300);
 		score5.setColor(Color.white);
 		score5.setFont(FONT);
+		score5.setLocation(WINDOW_WIDTH/2-score5.getWidth()/2, score4.getY()+40);
 		
-		score6 = new GLabel(names[4]+" "+scores[9], 100, 350);
-		score6.setLocation(WINDOW_WIDTH/2-score6.getWidth(), score5.getY()+30);
+		score6 = new GLabel(names[4]+" .......... "+scores[9], 100, 350);
 		score6.setColor(Color.white);
 		score6.setFont(FONT);
+		score6.setLocation(WINDOW_WIDTH/2-score6.getWidth()/2, score5.getY()+40);
 		
-		score7 = new GLabel(names[3]+" "+scores[9], 100, 400);
-		score7.setLocation(WINDOW_WIDTH/2-score7.getWidth(), score6.getY()+30);
+		score7 = new GLabel(names[3]+" .......... "+scores[9], 100, 400);
 		score7.setColor(Color.white);
 		score7.setFont(FONT);
+		score7.setLocation(WINDOW_WIDTH/2-score7.getWidth()/2, score6.getY()+40);
 		
-		score8 = new GLabel(names[2]+" "+scores[9], 100, 450);
-		score8.setLocation(WINDOW_WIDTH/2-score8.getWidth(), score7.getY()+30);
+		score8 = new GLabel(names[2]+" .......... "+scores[9], 100, 450);
 		score8.setColor(Color.white);
 		score8.setFont(FONT);
+		score8.setLocation(WINDOW_WIDTH/2-score8.getWidth()/2, score7.getY()+40);
 		
-		score9 = new GLabel(names[1]+" "+scores[9], 100, 500);
-		score9.setLocation(WINDOW_WIDTH/2-score9.getWidth(), score8.getY()+30);
+		score9 = new GLabel(names[1]+" .......... "+scores[9], 100, 500);
 		score9.setColor(Color.white);
 		score9.setFont(FONT);
+		score9.setLocation(WINDOW_WIDTH/2-score9.getWidth()/2, score8.getY()+40);
 		
-		score10 = new GLabel(names[0]+" "+scores[9], 100, 550);
-		score10.setLocation(WINDOW_WIDTH/2-score10.getWidth(), score9.getY()+30);
+		score10 = new GLabel(names[0]+" .......... "+scores[9], 100, 550);
 		score10.setColor(Color.white);
 		score10.setFont(FONT);
+		score10.setLocation(WINDOW_WIDTH/2-score10.getWidth()/2, score9.getY()+40);
 	}
 
 	@Override
