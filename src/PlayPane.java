@@ -103,12 +103,14 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		}
 		
 		player.update();
+		
+		//update enemies
 		traf.update();
 		
 		cars = traf.getCars();
 		
 		//update map
-		//update enemies
+		
 		//update labels
 		score = ((System.currentTimeMillis()-startTime)/1000)+totalTime;
 		scoreString = String.valueOf("Score: "+score);
@@ -121,8 +123,11 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		//run through enemy array to check with collision function
 		for(EnemyCar enemy : cars) {
-			if(collision(player.getImage(), enemy.getImage()))
+			if(collision(player.getImage(), enemy.getImage())) {
 				System.out.println("OUCH!");
+				//decrease player health by one
+				//player stops taking damage for a few seconds
+			}
 		}
 	}
 	
