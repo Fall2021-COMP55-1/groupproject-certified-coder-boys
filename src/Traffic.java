@@ -46,20 +46,20 @@ public class Traffic {
 			roll = rand.nextInt() % 3;
 			roll = 0;
 			switch(roll) {
-			case 0:
-			  x = 400;
-			  y = 300;
-			 break;
+				case 0:
+					x = 400;
+					y = 300;
+					break;
 			
-			case 1:
-				 x = 400;
-				 y = 300;
-				break;
+				case 1:
+					x = 400;
+					y = 300;
+					break;
 				
-			case 2:
-				 x = 400;
-				 y = 300;
-				break;
+				case 2:
+					x = 400;
+					y = 300;
+					break;
 			}
 			car = new EnemyCar(app, game, 0.0, 2.0, x, y);
 			cars.add(car);
