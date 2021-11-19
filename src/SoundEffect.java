@@ -49,7 +49,7 @@ public class SoundEffect {
 		window.setVisible(true);
 			
          //Our audio file name in the res folder
-		clickSound = ".//res//filename.wav";
+		clickSound = ".//SoundAssets/F-Zero - Mute City.mp3/";
 
 
 	}
@@ -83,8 +83,8 @@ public class SoundEffect {
 		
 		public void actionPerformed(ActionEvent event){
 			
-			//se.setFile(clickSound);
-			//se.play();							
+//			se.setFile(clickSound);
+//			se.play();							
 		}
 	}
 
