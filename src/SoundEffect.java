@@ -49,7 +49,7 @@ public class SoundEffect {
 		window.setVisible(true);
 			
          //Our audio file name in the res folder
-		clickSound = ".//SoundAssets/F-Zero - Mute City.mp3/";
+		clickSound = ".//SoundAssets/F-Zero - Mute City.wav/";
 
 
 	}
