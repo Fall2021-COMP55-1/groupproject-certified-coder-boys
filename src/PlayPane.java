@@ -41,6 +41,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GLabel scoreLabel;
 	GLabel levelLabel;
 	
+	int health;
 	GLabel healthLabel;
 	
 	boolean paused;
@@ -68,6 +69,11 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		levelLabel.setFont("Arial-Bold-22");
 		levelLabel.setColor(Color.YELLOW);
 		
+		health = 4;
+		healthLabel = new GLabel("Health: "+Integer.toString(health),0,levelLabel.getY()+levelLabel.getHeight());
+		healthLabel.setFont("Arial-Bold-22");
+		healthLabel.setColor(Color.YELLOW);
+		
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
 		
@@ -83,6 +89,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.add(road);
 		program.add(scoreLabel);
 		program.add(levelLabel);
+		program.add(healthLabel);
 		player.show();
 		//enemy.show(); // only shows one car rn
 		timer = new Timer(10, this);
@@ -93,7 +100,15 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	@Override
 	public void hideContents() {
 		//program.remove(playerCar);
+		timer.stop();
 		player.hide();
+		program.remove(background);
+		program.remove(road);
+		program.remove(scoreLabel);
+		program.remove(levelLabel);
+		program.remove(healthLabel);
+		traf.hide();
+		
 		// TODO Auto-generated method stub
 
 	}
@@ -121,14 +136,20 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		levelCounter();
 		levelLabel.setLabel(level);
 		
+		healthLabel.setLabel("Health: "+health);
+		
 		//check health
 		
 		//run through enemy array to check with collision function
 		for(EnemyCar enemy : cars) {
 			if(collision(player.getImage(), enemy.getImage())) {
 				System.out.println("OUCH!");
-				//decrease player health by one
-				//player stops taking damage for a few seconds
+				health--;
+				//INSERT INVINCIBILITY IMPLEMENTATION HERE
+				if(health==0) {
+					//CALL GAME OVER PANE
+					program.switchToGameOver();
+				}
 			}
 		}
 	}
