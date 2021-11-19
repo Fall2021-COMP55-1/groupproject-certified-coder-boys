@@ -144,8 +144,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		for(EnemyCar enemy : cars) {
 			if(collision(player.getImage(), enemy.getImage())) {
 				System.out.println("OUCH!");
-				health--;
 				//INSERT INVINCIBILITY IMPLEMENTATION HERE
+				health--;
 				if(health==0) {
 					program.switchToGameOver();
 				}
