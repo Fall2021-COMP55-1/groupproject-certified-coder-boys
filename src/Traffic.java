@@ -5,9 +5,12 @@ import java.util.Random;
 public class Traffic {
 	ArrayList<EnemyCar> cars;
 	
+	private int maxDiff = 60;
 	private int delay = 1;
 	private int delayDefault = 400;
 	private long diff = 1;
+	private int dx = 0;
+	private int dy = 0;
 	EnemyCar car;
 	// add the three lane x and y values
 	private Random rand = new Random();
@@ -22,15 +25,45 @@ public class Traffic {
 	}
 	
 	public void update() {
-		diff = game.getScore();
-		delay --;
+		Iterator<EnemyCar> iter = cars.iterator();
 		
-		//update cars on board
-		if(cars.size() != 0) {
-			for(int i = 0; i < cars.size(); i++) {
-					cars.get(i).update();	
+		if(diff < 45)
+			delayDefault = (int) (400 - 4*(diff));
+		else {
+			delayDefault = (int) (400 - 4*(diff - 45));
+			if(delay < 100)
+				delayDefault = 100;
+		}
+		while(iter.hasNext()) {
+			EnemyCar temp = iter.next();
+			temp.update();
+			if(temp.getY()>400 && temp.getDX() != 0) {
+				temp.setDX(0);
+			}
+			if(temp.getY()>600) {
+				app.remove(temp.getImage());
+				iter.remove();
 			}
 		}
+		
+		diff = game.getScore();
+		
+		if(diff==0) {
+			diff=1;
+		}
+		
+		//max difficulty
+		if(diff > maxDiff)
+			diff = maxDiff;
+		
+		delay --;
+		
+		//update cars on board, delete?
+//		if(cars.size() != 0) {
+//			for(int i = 0; i < cars.size(); i++) {
+//					cars.get(i).update();	
+//			}
+//		}
 		
 		//doesn't spawn cars until delay hits 0
 		if(delay != 0) {
@@ -40,12 +73,13 @@ public class Traffic {
 		//restarts delay timer
 		delay = delayDefault;
 		int roll;
-		double x = 400;
-		double y = 300;
+		double x = 0;
+		double y = 0;
 		
-		if(diff < 15) {
+		if(diff < 45) {
 			//chooses random position for car
 			roll = rand.nextInt(3) % 3;
+			dy = 2;
 			switch(roll) {
 			case 0:
 				x = 400; //ADJUST
@@ -63,10 +97,24 @@ public class Traffic {
 				break;
 
 			}
-			car = new EnemyCar(app, game, 0.0, 2.0, x, y);
-			cars.add(car);
-			car.show();
 		}
+		else {
+			x = (Math.abs(rand.nextInt()) % 401)+150;
+			System.out.println("\n rand int gen: X: " + x );
+			y = 0;
+		}
+		
+		dy = (int) (((rand.nextInt() % diff)/8)+2);
+		dx = (rand.nextInt()%4) + 2;
+		if(diff < 45)
+			dx = 0;
+		
+		//dx()
+		System.out.println("\n dx: " + dx + " , dy: " + dy);
+		System.out.println(delay);
+		car = new EnemyCar(app, game, dx, dy, x, y);
+		cars.add(car);
+		car.show();
 		
 		
 //		Iterator<EnemyCar> iter = EnemyCar.iterator();

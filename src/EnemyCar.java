@@ -41,7 +41,9 @@ public class EnemyCar extends Object implements ActionListener{
 		program = app;
 		
 		this.dx = dx;
-		this.dy = dy;
+		this.dy = Math.abs(dy);
+		if(dy < 1)
+			this.dy=1;
 		Random rand = new Random();
 		int roll = rand.nextInt() % 5;
 		
@@ -70,6 +72,10 @@ public class EnemyCar extends Object implements ActionListener{
 		return pos;
 	}
 	
+	public double getY() {
+		return car.getY();
+	}
+	
 	public String getFileName() { // may need to be fixed
 		return fileName;
 	}
@@ -79,10 +85,40 @@ public class EnemyCar extends Object implements ActionListener{
 	}
 	
 	void update() {
-		car.move(dx, dy);
+		if(dx!=0) {
+			if(dx>0) {
+				if(car.getX()+car.getWidth()+dx>650) {
+					car.setLocation(650-car.getWidth(),car.getY()+dy);
+					dx = dx*-1;
+				}
+				else {
+					car.move(dx, dy);
+				}
+			}
+			else {
+				if(car.getX()+dx<150) {
+					car.setLocation(150,car.getY()+dy);
+					dx = dx*-1;
+				}
+				else {
+					car.move(dx, dy);
+				}
+			}
+		}
+		else
+			car.move(dx, dy);
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public double getDX() {
+		return dx;
+	}
+	
+	public void setDX(double d) {
+		dx = d;
+	}
+	
 	public void show() {
 		program.add(car); // adds one car right now
 	}
