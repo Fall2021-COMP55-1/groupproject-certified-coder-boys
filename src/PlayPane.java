@@ -50,6 +50,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	
 	long startTime;
 	
+	int delayHealth;
+	
 	//GUI UI; add this to update the game's labels
 	
 	public PlayPane(MainApplication app) {
@@ -81,6 +83,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		road.setSize(500,600);
 
 		pause = new GLabel("PAUSE", 100, 100);
+		
+		delayHealth = 1;
 	}
 	
 	@Override
@@ -144,8 +148,12 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		for(EnemyCar enemy : cars) {
 			if(collision(player.getImage(), enemy.getImage())) {
 				System.out.println("OUCH!");
-				//INSERT INVINCIBILITY IMPLEMENTATION HERE
-				health--;
+				//invincibility implementation
+				delayHealth--;
+				if(delayHealth==0) {
+					health--;
+					delayHealth = 120;
+				}
 				if(health==0) {
 					program.switchToGameOver();
 				}
