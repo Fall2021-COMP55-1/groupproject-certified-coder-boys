@@ -199,6 +199,11 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		return score;
 	}
 	
+	public void reset() {
+		traf.hide();
+		score = 0;
+	}
+	
 	public boolean collision(GImage boxA, GImage boxB) {
 		double minX = boxA.getX();
 		double minY = boxA.getY();
