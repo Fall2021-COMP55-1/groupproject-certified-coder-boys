@@ -74,7 +74,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		healthLabel.setFont("Arial-Bold-22");
 		healthLabel.setColor(Color.YELLOW);
 		
-		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
+		background = new GImage("AssetImages/side road asset.gif",0,0);
 		background.setSize(800,600);
 		
 		road = new GImage("AssetImages/Final Road 2L3S.gif",150,0);
