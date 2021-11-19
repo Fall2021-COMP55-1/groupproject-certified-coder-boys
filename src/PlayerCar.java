@@ -49,6 +49,7 @@ public class PlayerCar extends Object{
 	public int getHealth() {
 		return health;
 	}
+	
 	public void updateDX(int x) {
 		if(x < 0 && dx > 0)
 			dx = -5;

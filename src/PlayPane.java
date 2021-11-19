@@ -41,6 +41,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GLabel scoreLabel;
 	GLabel levelLabel;
 	
+	GLabel healthLabel;
+	
 	boolean paused;
 	
 	GLabel pause;
