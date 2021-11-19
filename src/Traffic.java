@@ -7,7 +7,7 @@ public class Traffic {
 	
 	private int delay = 1;
 	private int delayDefault = 400;
-	private int diff = 1;
+	private long diff = 1;
 	EnemyCar car;
 	// add the three lane x and y values
 	private Random rand = new Random();
@@ -22,6 +22,7 @@ public class Traffic {
 	}
 	
 	public void update() {
+		diff = game.getScore();
 		delay --;
 		
 		//update cars on board
