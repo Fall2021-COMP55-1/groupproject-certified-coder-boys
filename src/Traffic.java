@@ -47,18 +47,18 @@ public class Traffic {
 			roll = rand.nextInt(3) % 3;
 			switch(roll) {
 			case 0:
-			  x = 400; //ADJUST
-			  y = 0;
-			 break;
+				x = 400; //ADJUST
+				y = 0;
+				break;
 			 
 			case 1:
-				 x = 300; //ADJUST
-				 y = 0;
+				x = 300; //ADJUST
+				y = 0;
 				break;
 				
 			case 2:
-				 x = 500; //ADJUST
-				 y = 0;
+				x = 500; //ADJUST
+				y = 0;
 				break;
 
 			}
