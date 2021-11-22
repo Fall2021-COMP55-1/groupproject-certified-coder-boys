@@ -4,6 +4,8 @@ public class PlayerCar extends Object{
 
 	 // Sets the powerup’s speed, width, height, filename, and Space.
 
+	public static final String Position = null;
+	public static final String Size = null;
 	String fileName;
 	int width;
 	int height;
