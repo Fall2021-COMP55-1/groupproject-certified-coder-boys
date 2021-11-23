@@ -5,12 +5,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import acm.graphics.GImage;
 import acm.graphics.GObject;
 
 public class GameOver extends GraphicsPane {
 	
 	// you will use program to get access to all of the GraphicsProgram calls
-	private MainApplication program; 
+	private MainApplication program;
+	private GImage screen;
 	private GButton rect;
 	private GButton rect2;
 	private final int BUTTON_SIZE = 50;
@@ -18,6 +20,7 @@ public class GameOver extends GraphicsPane {
 	public GameOver(MainApplication app) {
 		super();
 		program = app;
+		screen = new GImage("AssetImages/Game Over.png",0,0);
 		rect = new GButton("Play again", app.getWidth()/2-BUTTON_SIZE/2, app.getHeight()/2-BUTTON_SIZE/2, BUTTON_SIZE, BUTTON_SIZE);
 		rect2 = new GButton("High Score", 300, 300, BUTTON_SIZE, BUTTON_SIZE);
 		rect.setFillColor(Color.RED);
@@ -26,12 +29,14 @@ public class GameOver extends GraphicsPane {
 
 	@Override
 	public void showContents() {
+		program.add(screen);
 		program.add(rect);
 		program.add(rect2);
 	}
 
 	@Override
 	public void hideContents() {
+		program.remove(screen);
 		program.remove(rect);
 		program.remove(rect2);
 	}
