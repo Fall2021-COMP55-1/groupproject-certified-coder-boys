@@ -27,16 +27,48 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	int i;
 	int key;
 	
+	GLabel letter1;
+	GLabel letter2;
+	GLabel letter3;
+	GLabel letter4;
+	GLabel letter5;
+	GLabel letter6;
+	
 	char c;
 
 	public NameInput(MainApplication app) {
 		super();
 		program = app;
 		screen = new GImage("AssetImages/Name Input Menu.png",0,0);
-		rect = new GButton("TEST",200,200,200,200);
-		rect.setFillColor(Color.red);
+		rect = new GButton("NEXT",800,600,200,100);
+		rect.setLocation(800-rect.getWidth()-50,600-rect.getHeight()-50);
+		rect.setFillColor(Color.yellow);
 		name = new char[6];
 		i = 0;
+		
+		letter1 = new GLabel("?",50,360);
+		letter1.setFont("Arial-Black-90");
+		letter1.setColor(Color.yellow);
+		
+		letter2 = new GLabel("?",180,360);
+		letter2.setFont("Arial-Black-90");
+		letter2.setColor(Color.yellow);
+		
+		letter3 = new GLabel("?",310,360);
+		letter3.setFont("Arial-Black-90");
+		letter3.setColor(Color.yellow);
+		
+		letter4 = new GLabel("?",440,360);
+		letter4.setFont("Arial-Black-90");
+		letter4.setColor(Color.yellow);
+		
+		letter5 = new GLabel("?",570,360);
+		letter5.setFont("Arial-Black-90");
+		letter5.setColor(Color.yellow);
+		
+		letter6 = new GLabel("?",700,360);
+		letter6.setFont("Arial-Black-90");
+		letter6.setColor(Color.yellow);
 	}
 
 	@Override
@@ -48,21 +80,29 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 			i++;
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			System.out.println(name[i]);
-		}
+//		//test code
+//		for(int i = 0; i < 6; i++) {
+//			System.out.println(name[i]);
+//		}
 	}
 	
 	@Override
 	public void showContents() {
 		program.add(screen);
-		program.add(rect);
+		timer = new Timer(10,this);
+		timer.start();
 	}
 
 	@Override
 	public void hideContents() {
 		program.remove(screen);
 		program.remove(rect);
+		program.remove(letter1);
+		program.remove(letter2);
+		program.remove(letter3);
+		program.remove(letter4);
+		program.remove(letter5);
+		program.remove(letter6);
 	}
 
 	@Override
@@ -71,5 +111,37 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 		if (obj == rect) {
 			program.switchToGameOver();
 		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(i == 1) {
+			letter1.setLabel(Character.toString(name[0]));
+			program.add(letter1);
+		}
+		if(i == 2) {
+			letter2.setLabel(Character.toString(name[1]));
+			program.add(letter2);
+		}
+		if(i == 3) {
+			letter3.setLabel(Character.toString(name[2]));
+			program.add(letter3);
+		}
+		if(i == 4) {
+			letter4.setLabel(Character.toString(name[3]));
+			program.add(letter4);
+		}
+		if(i == 5) {
+			letter5.setLabel(Character.toString(name[4]));
+			program.add(letter5);
+		}
+		if(i == 6) {
+			letter6.setLabel(Character.toString(name[5]));
+			program.add(letter6);
+			program.add(rect);
+			i++;
+		}
+		
 	}
 }
