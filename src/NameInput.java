@@ -34,6 +34,8 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	GLabel letter5;
 	GLabel letter6;
 	
+	String realName;
+	
 	char c;
 
 	public NameInput(MainApplication app) {
@@ -109,8 +111,21 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == rect) {
+			setName();
 			program.switchToGameOver();
 		}
+	}
+	
+	public void setName() {
+		realName = "";
+		for(int i = 0; i<6; i++) {
+			realName = realName + Character.toString(name[i]);
+		}
+		System.out.println(realName);
+	}
+	
+	public String getName() {
+		return realName;
 	}
 
 	@Override
