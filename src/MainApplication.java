@@ -15,6 +15,7 @@ public class MainApplication extends GraphicsProgram {
 	private HighScoreMenu highScorePane;
 	private TitleScreenPane titleScreen;
 	private GameOver over;
+	private NameInput name;
 	
 	/* Method: setupInteractions
 	 * -------------------------
@@ -111,6 +112,7 @@ public class MainApplication extends GraphicsProgram {
 		game = new PlayPane(this);
 		titleScreen = new TitleScreenPane(this);
 		over = new GameOver(this);
+		name = new NameInput(this);
 		
 		//switchToMenu();
 		setupInteractions();
@@ -135,6 +137,10 @@ public class MainApplication extends GraphicsProgram {
 	
 	public void switchToGameOver() {
 		switchToScreen(over);
+	}
+	
+	public void switchToNameInput() {
+		switchToScreen(name);
 	}
 	
 	public void switchToGame() {
