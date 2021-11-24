@@ -47,6 +47,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	boolean paused;
 	
 	GLabel pause;
+	GImage pauseScreen;
 	
 	long startTime;
 	
@@ -65,6 +66,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		scoreLabel = new GLabel("Score: 0", 0, 200);
 		scoreLabel.setFont("Arial-Bold-22");
 		scoreLabel.setColor(Color.YELLOW);
+		
+		pauseScreen = new GImage("AssetImages/Pause Screen.png",0,0);
 		
 		level = "Level: 1";
 		levelLabel = new GLabel(level, 0, scoreLabel.getY()+scoreLabel.getHeight());
@@ -214,11 +217,11 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	
 	public void showPaused() {
 		if(paused) {
-			program.add(pause);
+			program.add(pauseScreen);
 			totalTime += (System.currentTimeMillis()-startTime)/1000;
 		}
 		else {
-			program.remove(pause);
+			program.remove(pauseScreen);
 			startTime = System.currentTimeMillis();
 		}
 	}
