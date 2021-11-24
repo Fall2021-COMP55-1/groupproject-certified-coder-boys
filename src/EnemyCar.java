@@ -14,8 +14,8 @@ public class EnemyCar extends Object implements ActionListener{
 	// below are the variables that will be needed
 	private double speed;
 	private String fileName;
-	private int width;
-	private int height;
+	private int width = 50;
+	private int height = 100;
 	private double x;
 	private double y;
 	private double dx;
@@ -67,6 +67,7 @@ public class EnemyCar extends Object implements ActionListener{
 		
 		System.out.println(fileName);
 		car = new GImage(fileName,x,y);
+		car.setSize(width, height);
 	}
 	
 //	public EnemyCar spawn() { have to add a global enemyCar
