@@ -21,8 +21,8 @@ public class GameOver extends GraphicsPane {
 		super();
 		program = app;
 		screen = new GImage("AssetImages/Game Over.png",0,0);
-		rect = new GButton("Play again", app.getWidth()/2-BUTTON_SIZE/2, app.getHeight()/2-BUTTON_SIZE/2, BUTTON_SIZE, BUTTON_SIZE);
-		rect2 = new GButton("High Score", 300, 300, BUTTON_SIZE, BUTTON_SIZE);
+		rect = new GButton("Play Again", app.getWidth()/2-BUTTON_SIZE/2, app.getHeight()/2-BUTTON_SIZE/2, BUTTON_SIZE, BUTTON_SIZE);
+		rect2 = new GButton("Main Menu", 300, 300, BUTTON_SIZE, BUTTON_SIZE);
 		rect.setFillColor(Color.RED);
 		rect2.setFillColor(Color.RED);
 	}
@@ -45,10 +45,10 @@ public class GameOver extends GraphicsPane {
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == rect) {
-			program.switchToSome();
+			program.switchToGame();
 		}
 		if (obj == rect2) {
-			program.switchToHighScore();
+			program.switchToMenu();
 		}
 	}
 }
