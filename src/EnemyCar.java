@@ -45,14 +45,27 @@ public class EnemyCar extends Object implements ActionListener{
 		if(dy < 1)
 			this.dy=1;
 		Random rand = new Random();
-		int roll = rand.nextInt() % 5;
+		int roll = rand.nextInt() % 5; //based on number of cars
 		
 		switch(roll) {
 			case 0:
-				// the filenames
+			case 1:
+			case 2:
+			case 3:
+				fileName = "AssetImages/BuickerB.png";
+				break;
+			case 4:
+				fileName = "AssetImages/RamB.png";
+				break;
+			case 5:
+				fileName = "AssetImages/JeepB.png";
+				break;
+			default:
+				fileName = "AssetImages/RamB.png";
+				break;
 		}
 		
-		fileName = "AssetImages/JeepB.png";
+		System.out.println(fileName);
 		car = new GImage(fileName,x,y);
 	}
 	
