@@ -92,6 +92,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	
 	@Override
 	public void showContents() {
+		reset();
 		program.add(background);
 		program.add(road);
 		program.add(scoreLabel);
@@ -102,6 +103,17 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		timer = new Timer(10, this);
 		timer.start();
 		startTime = System.currentTimeMillis();
+	}
+	
+	public void reset() {
+		score = 0;
+		health = 4;
+		level = "Level: 1";
+		levelLabel.setLabel(level);
+		delayHealth = 1;
+		//traf.hide();
+		score = 0;
+		totalTime = 0;
 	}
 
 	@Override
@@ -157,10 +169,11 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 					System.out.println("OUCH!");
 					delayHealth = 120;
 				}
-				if(health==0) {
-					program.switchToNameInput();
-				}
 			}
+		}
+		
+		if(health==0) {
+			program.switchToNameInput();
 		}
 	}
 	
@@ -228,11 +241,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	
 	public long getScore() {
 		return score;
-	}
-	
-	public void reset() {
-		traf.hide();
-		score = 0;
 	}
 	
 	public boolean collision(GImage boxA, GImage boxB) {
