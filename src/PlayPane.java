@@ -159,11 +159,15 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		//check health
 		
+		delayHealth--;
+		
+		if(delayHealth <= 0)
+			delayHealth = 0;
+		
 		//run through enemy array to check with collision function
 		for(EnemyCar enemy : cars) {
 			if(collision(player.getImage(), enemy.getImage())) {
 				//invincibility implementation
-				delayHealth--;
 				if(delayHealth==0) {
 					health--;
 					System.out.println("OUCH!");
