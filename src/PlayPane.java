@@ -49,6 +49,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GLabel pause;
 	GImage pauseScreen;
 	
+	GImage invicibilityIndicator;
+	
 	long startTime;
 	
 	int delayHealth;
@@ -63,9 +65,12 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		//define all starting states here
 		player = new PlayerCar(app, this);
+		
 		scoreLabel = new GLabel("Score: 0", 0, 200);
 		scoreLabel.setFont("Arial-Bold-22");
 		scoreLabel.setColor(Color.YELLOW);
+		
+		invicibilityIndicator = new GImage("AssetImages/invincible indicator.png",0,0);
 		
 		pauseScreen = new GImage("AssetImages/Pause Screen.png",0,0);
 		
@@ -163,8 +168,10 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		delayHealth--;
 		
-		if(delayHealth <= 0)
+		if(delayHealth <= 0) {
 			delayHealth = 0;
+			program.remove(invicibilityIndicator);
+		}
 		
 		//run through enemy array to check with collision function
 		for(EnemyCar enemy : cars) {
@@ -174,6 +181,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 					health--;
 					System.out.println("OUCH!");
 					delayHealth = 120;
+					program.add(invicibilityIndicator);
 				}
 			}
 		}
