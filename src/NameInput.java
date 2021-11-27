@@ -81,6 +81,11 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 			name[i] = (char)key;
 			i++;
 		}
+		else {
+			i=0;
+			name[i] = (char)key;
+			i++;
+		}
 		
 //		//test code
 //		for(int i = 0; i < 6; i++) {
@@ -91,6 +96,12 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	@Override
 	public void showContents() {
 		program.add(screen);
+		program.add(letter1);
+		program.add(letter2);
+		program.add(letter3);
+		program.add(letter4);
+		program.add(letter5);
+		program.add(letter6);
 		timer = new Timer(10,this);
 		timer.start();
 	}
@@ -133,27 +144,21 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 		// TODO Auto-generated method stub
 		if(i == 1) {
 			letter1.setLabel(Character.toString(name[0]));
-			program.add(letter1);
 		}
 		if(i == 2) {
 			letter2.setLabel(Character.toString(name[1]));
-			program.add(letter2);
 		}
 		if(i == 3) {
 			letter3.setLabel(Character.toString(name[2]));
-			program.add(letter3);
 		}
 		if(i == 4) {
 			letter4.setLabel(Character.toString(name[3]));
-			program.add(letter4);
 		}
 		if(i == 5) {
 			letter5.setLabel(Character.toString(name[4]));
-			program.add(letter5);
 		}
 		if(i == 6) {
 			letter6.setLabel(Character.toString(name[5]));
-			program.add(letter6);
 			program.add(rect);
 			i++;
 		}
