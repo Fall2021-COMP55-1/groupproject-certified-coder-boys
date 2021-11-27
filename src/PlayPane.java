@@ -106,6 +106,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	}
 	
 	public void reset() {
+		player = new PlayerCar(program, this);
+		traf = new Traffic(program, this);
 		score = 0;
 		health = 4;
 		level = "Level: 1";
