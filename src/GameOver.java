@@ -16,15 +16,19 @@ public class GameOver extends GraphicsPane {
 	private GButton rect;
 	private GButton rect2;
 	private final int BUTTON_SIZE = 50;
+	private final int X = 50;
+	private final int Y = 50;
 
 	public GameOver(MainApplication app) {
 		super();
 		program = app;
 		screen = new GImage("AssetImages/Game Over.png",0,0);
-		rect = new GButton("Play Again", app.getWidth()/2-BUTTON_SIZE/2, app.getHeight()/2-BUTTON_SIZE/2, BUTTON_SIZE, BUTTON_SIZE);
-		rect2 = new GButton("Main Menu", 300, 300, BUTTON_SIZE, BUTTON_SIZE);
+		rect = new GButton("", X, ((Y*3)+Y/2), ((BUTTON_SIZE*4)+BUTTON_SIZE/5), BUTTON_SIZE);
+		rect2 = new GButton("", ((X*10)+X/2), ((Y*3)+30), ((BUTTON_SIZE*4)+BUTTON_SIZE/5), BUTTON_SIZE);
 		rect.setFillColor(Color.RED);
+		rect.setVisible(false);
 		rect2.setFillColor(Color.RED);
+		rect2.setVisible(false);
 	}
 
 	@Override
