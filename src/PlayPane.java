@@ -49,11 +49,16 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GLabel pause;
 	GImage pauseScreen;
 	
+	GImage powerup;
+	GImage cooldown;
+	
 	GImage invicibilityIndicator;
 	
 	long startTime;
 	
 	int delayHealth;
+	
+	int delayPower;
 	
 	//GUI UI; add this to update the game's labels
 	
@@ -70,6 +75,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		scoreLabel.setFont("Arial-Bold-22");
 		scoreLabel.setColor(Color.YELLOW);
 		
+		powerup = new GImage("AssetImages/powerup indicator.png",0,0);
+		cooldown = new GImage("AssetImages/cooldown indicator.png",0,0);
 		invicibilityIndicator = new GImage("AssetImages/invincible indicator.png",0,0);
 		
 		pauseScreen = new GImage("AssetImages/Pause Screen.png",0,0);
@@ -93,6 +100,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		pause = new GLabel("PAUSE", 100, 100);
 		
 		delayHealth = 1;
+		delayPower = 0;
 	}
 	
 	@Override
@@ -121,6 +129,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		//traf.hide();
 		score = 0;
 		totalTime = 0;
+		delayPower = 0;
 	}
 
 	@Override
@@ -143,6 +152,13 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	public void actionPerformed(ActionEvent e) {
 		if(paused) {
 			return;
+		}
+		
+		if(delayPower>0)
+			delayPower--;
+		else {
+			program.remove(cooldown);
+			program.add(powerup);
 		}
 		
 		player.update();
@@ -230,10 +246,20 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		else if(key == KeyEvent.VK_RIGHT) {
 			player.updateDX(5);
 		}
-		else if(key == KeyEvent.VK_SPACE) {
+		else if(key == KeyEvent.VK_ESCAPE) {
 			//pauses game
 			paused = !paused;
 			showPaused();
+		}
+		else if(key == KeyEvent.VK_SPACE) {
+			//USE HEALTH POWERUP LIMITED TO EVERY 60 SECONDS
+			if(health<4 && delayPower == 0) {
+				health++;
+				delayPower = 3600; //60 seconds
+				program.remove(powerup);
+				program.add(cooldown);
+				//remove gimage
+			}
 		}
 	}
 	
