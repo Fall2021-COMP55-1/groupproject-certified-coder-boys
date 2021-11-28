@@ -72,7 +72,6 @@ public class HighScore {
 			
 			sort();
 		}
-		//********STILL NEED TO REWRITE TXT FILE********
 		for(int i = 0; i<10; i++) {
 			fw.write(names[i]);
 			fw.write(Integer.toString(scores[i]));
