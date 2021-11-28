@@ -52,6 +52,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GImage powerup;
 	GImage cooldown;
 	
+	GImage pauseIndicator;
 	GImage invicibilityIndicator;
 	
 	long startTime;
@@ -78,6 +79,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		powerup = new GImage("AssetImages/powerup indicator.png",0,0);
 		cooldown = new GImage("AssetImages/cooldown indicator.png",0,0);
 		invicibilityIndicator = new GImage("AssetImages/invincible indicator.png",0,0);
+		pauseIndicator = new GImage("AssetImages/pause indicator.png",0,0);
 		
 		pauseScreen = new GImage("AssetImages/Pause Screen.png",0,0);
 		
@@ -111,6 +113,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.add(scoreLabel);
 		program.add(levelLabel);
 		program.add(healthLabel);
+		program.add(pauseIndicator);
 		player.show();
 		//enemy.show(); // only shows one car rn
 		timer = new Timer(10, this);
@@ -142,6 +145,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.remove(scoreLabel);
 		program.remove(levelLabel);
 		program.remove(healthLabel);
+		program.remove(pauseIndicator);
 		traf.hide();
 		
 		// TODO Auto-generated method stub
