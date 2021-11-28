@@ -74,7 +74,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		scoreLabel = new GLabel("Score: 0", 0, 200);
 		scoreLabel.setFont("Arial-Bold-22");
-		scoreLabel.setColor(Color.YELLOW);
+		scoreLabel.setColor(Color.pink);
 		
 		powerup = new GImage("AssetImages/powerup indicator.png",0,0);
 		cooldown = new GImage("AssetImages/cooldown indicator.png",0,0);
@@ -86,12 +86,12 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		level = "Level: 1";
 		levelLabel = new GLabel(level, 0, scoreLabel.getY()+scoreLabel.getHeight());
 		levelLabel.setFont("Arial-Bold-22");
-		levelLabel.setColor(Color.YELLOW);
+		levelLabel.setColor(Color.pink);
 		
 		health = 4;
 		healthLabel = new GLabel("Health: "+Integer.toString(health),0,levelLabel.getY()+levelLabel.getHeight());
 		healthLabel.setFont("Arial-Bold-22");
-		healthLabel.setColor(Color.YELLOW);
+		healthLabel.setColor(Color.pink);
 		
 		background = new GImage("AssetImages/ground infinite texture.jpg",0,0);
 		background.setSize(800,600);
@@ -99,7 +99,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		road = new GImage("AssetImages/Final Road 2L3S.gif",150,0);
 		road.setSize(500,600);
 
-		pause = new GLabel("PAUSE", 100, 100);
+//		pause = new GLabel("PAUSE", 100, 100);
+//		pause.setColor(Color.pink);
 		
 		delayHealth = 1;
 		delayPower = 0;
