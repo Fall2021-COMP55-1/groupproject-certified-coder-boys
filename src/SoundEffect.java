@@ -81,7 +81,7 @@ public class SoundEffect {
 	
 	public class ButtonHandler implements ActionListener{
 		
-		public void actionPerformed(ActionEvent event){
+		public void actionPerformed(ActionEvent event){ // figure out this actionPerformed!!!
 			
 //			se.setFile(clickSound);
 //			se.play();							
