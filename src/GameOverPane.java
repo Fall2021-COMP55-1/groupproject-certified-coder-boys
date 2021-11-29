@@ -8,7 +8,7 @@ import java.util.Scanner;
 import acm.graphics.GImage;
 import acm.graphics.GObject;
 
-public class GameOver extends GraphicsPane {
+public class GameOverPane extends GraphicsPane {
 	
 	// you will use program to get access to all of the GraphicsProgram calls
 	private MainApplication program;
@@ -19,7 +19,7 @@ public class GameOver extends GraphicsPane {
 	private final int X = 50;
 	private final int Y = 50;
 
-	public GameOver(MainApplication app) {
+	public GameOverPane(MainApplication app) {
 		super();
 		program = app;
 		screen = new GImage("AssetImages/Game Over.png",0,0);
