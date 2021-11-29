@@ -49,10 +49,10 @@ public class GameOver extends GraphicsPane {
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == rect) {
-			program.switchToGame();
+			program.switchToMenu();
 		}
 		if (obj == rect2) {
-			program.switchToMenu();
+			program.switchToGame();
 		}
 	}
 }

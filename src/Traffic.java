@@ -27,6 +27,7 @@ public class Traffic {
 	public void update() {
 		Iterator<EnemyCar> iter = cars.iterator();
 		
+		//spawn rate increases over time
 		if(diff < 45)
 			delayDefault = (int) (400 - 4*(diff));
 		else {
@@ -76,40 +77,45 @@ public class Traffic {
 		double x = 0;
 		double y = 0;
 		
-		if(diff < 45) {
-			//chooses random position for car
-			roll = rand.nextInt(3) % 3;
-			dy = 2;
-			switch(roll) {
-			case 0:
-				x = 400; //ADJUST
-				y = 0;
-				break;
-			 
-			case 1:
-				x = 300; //ADJUST
-				y = 0;
-				break;
-				
-			case 2:
-				x = 500; //ADJUST
-				y = 0;
-				break;
-
-			}
-		}
-		else {
-			x = (Math.abs(rand.nextInt()) % 401)+150;
-			System.out.println("\n rand int gen: X: " + x );
-			y = 0;
-		}
+//		if(diff < 45) {
+//			//chooses random position for car
+//			roll = rand.nextInt(3) % 3;
+//			dy = 2;
+//			switch(roll) {
+//			case 0:
+//				x = 400; //ADJUST
+//				y = 0;
+//				break;
+//			 
+//			case 1:
+//				x = 300; //ADJUST
+//				y = 0;
+//				break;
+//				
+//			case 2:
+//				x = 500; //ADJUST
+//				y = 0;
+//				break;
+//
+//			}
+//		}
+//		else {
+//			x = (Math.abs(rand.nextInt()) % 401)+150;
+//			System.out.println("\n rand int gen: X: " + x );
+//			y = 0;
+//		}
 		
-		dy = (int) (((rand.nextInt() % diff)/8)+2);
+		//random x position is chosen
+		x = (Math.abs(rand.nextInt()) % 401)+150;
+		System.out.println("\n rand int gen: X: " + x );
+		y = 0;
+		
+		//dy is randomly generated
+		dy = (int) (((rand.nextInt() % diff)/8)+2); //higher difficulty means higher dy
 		dx = (rand.nextInt()%4) + 2;
 		if(diff < 45)
 			dx = 0;
 		
-		//dx()
 		System.out.println("\n dx: " + dx + " , dy: " + dy);
 		System.out.println(delay);
 		car = new EnemyCar(app, game, dx, dy, x, y);
