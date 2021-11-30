@@ -208,6 +208,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		}
 		
 		if(health==0) {
+			program.setScore(score);
 			program.switchToNameInput();
 		}
 	}

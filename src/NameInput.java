@@ -123,6 +123,7 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == rect) {
 			setName();
+			program.setName(realName);
 			program.switchToGameOver();
 		}
 	}

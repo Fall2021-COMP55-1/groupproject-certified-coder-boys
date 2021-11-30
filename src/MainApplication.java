@@ -118,6 +118,14 @@ public class MainApplication extends GraphicsProgram {
 		setupInteractions();
 		switchToGameMenu();
 	}
+	
+	public void setScore(long score) {
+		over.setScore(score);
+	}
+	
+	public void setName(String name) {
+		over.setName(name);
+	}
 
 	public void switchToMenu() {
 		switchToScreen(menu);

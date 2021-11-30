@@ -18,6 +18,9 @@ public class GameOverPane extends GraphicsPane {
 	private final int BUTTON_SIZE = 50;
 	private final int X = 50;
 	private final int Y = 50;
+	
+	long score;
+	String name;
 
 	public GameOverPane(MainApplication app) {
 		super();
@@ -30,12 +33,21 @@ public class GameOverPane extends GraphicsPane {
 		rect2.setFillColor(Color.RED);
 		rect2.setVisible(false);
 	}
+	
+	public void setScore(long score) {
+		this.score = score;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	@Override
 	public void showContents() {
 		program.add(screen);
 		program.add(rect);
 		program.add(rect2);
+		System.out.println("Score: "+score+" Name: "+name);
 	}
 
 	@Override
