@@ -45,25 +45,38 @@ public class EnemyCar extends Object implements ActionListener{
 		if(dy < 1)
 			this.dy=1;
 		Random rand = new Random();
-		int roll = rand.nextInt() % 5; //based on number of cars
+		int roll = rand.nextInt() % 7; //based on number of cars
 		
 		switch(roll) {
 			case 0:
+				fileName = "AssetImages/Mclaren.png";
+				break;
 			case 1:
+				fileName = "AssetImages/lotus.png";
+				break;
 			case 2:
+				fileName = "AssetImages/Nissan.png";
+				break;
 			case 3:
 				fileName = "AssetImages/BuickerB.png";
-				fileName = "AssetImages/Enemy2.png";
+				//fileName = "AssetImages/Enemy2.png";
 				break;
 			case 4:
 				fileName = "AssetImages/RamB.png";
 				break;
 			case 5:
-				fileName = "AssetImages/JeepB.png";
+				fileName = "AssetImages/Mercedez.png";
 				break;
+			case 6:
+				fileName = "AssetImages/toyota.png";
+				break;
+			case 7:
+				fileName = "AssetImages/Audi.png";
+				break;
+				
 			default:
-				fileName = "AssetImages/RamB.png";
-				break;
+				fileName = "AssetImages/Porsche.png";
+				break; //a
 		}
 		
 		System.out.println(fileName);
