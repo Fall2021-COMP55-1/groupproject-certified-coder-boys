@@ -74,7 +74,7 @@ public class HighScoreMenu extends GraphicsPane {
 	
 	public void labels(){
 		score1 = new GLabel("1. "+names[9]+" .......... "+scores[9], 100, 100);
-		score1.setColor(Color.white);
+		score1.setColor(Color.yellow);
 		score1.setFont(FONT);
 		score1.setLocation(WINDOW_WIDTH/2-score1.getWidth()/2, 180);
 		
