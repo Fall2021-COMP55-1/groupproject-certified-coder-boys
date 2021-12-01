@@ -13,6 +13,7 @@ import acm.graphics.GImage;
 import acm.graphics.GLabel;
 import acm.graphics.GObject;
 import acm.graphics.GRect;
+import acm.program.Program;
 
 public class PlayPane extends GraphicsPane implements KeyListener, ActionListener {
 	private MainApplication program; 
@@ -30,6 +31,13 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GImage road;
 	Powerup item;
 	
+	ArrayList<GRect> healthBar;
+	
+	GRect health1;
+	GRect health2;
+	GRect health3;
+	GRect health4;
+	
 	long score;
 	long totalTime = 0;
 	String level;
@@ -42,6 +50,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	GLabel levelLabel;
 	
 	int health;
+	int lastHealth;
 	GLabel healthLabel;
 	
 	boolean paused;
@@ -89,6 +98,37 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		levelLabel.setColor(Color.pink);
 		
 		health = 4;
+		lastHealth = health; 
+		
+		health1 = new GRect(5, levelLabel.getY()+levelLabel.getHeight()+20, 20, 20);
+		health1.setColor(Color.black);
+		health1.setFillColor(Color.red);
+		health1.setFilled(true);
+		
+		health2 = new GRect(25, levelLabel.getY()+levelLabel.getHeight()+20, 20, 20);
+		health2.setColor(Color.black);
+		health2.setFillColor(Color.red);
+		health2.setFilled(true);
+		
+		
+		health3 = new GRect(45, levelLabel.getY()+levelLabel.getHeight()+20, 20, 20);
+		health3.setColor(Color.black);
+		health3.setFillColor(Color.red);
+		health3.setFilled(true);
+		
+		
+		health4 = new GRect(65, levelLabel.getY()+levelLabel.getHeight()+20, 20, 20);
+		health4.setColor(Color.black);
+		health4.setFillColor(Color.red);
+		health4.setFilled(true);
+		
+		
+		healthBar = new ArrayList<GRect>();
+		healthBar.add(health1);
+		healthBar.add(health2);
+		healthBar.add(health3);
+		healthBar.add(health4);
+		
 		healthLabel = new GLabel("Health: "+Integer.toString(health),0,levelLabel.getY()+levelLabel.getHeight());
 		healthLabel.setFont("Arial-Bold-22");
 		healthLabel.setColor(Color.pink);
@@ -115,6 +155,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.add(levelLabel);
 		program.add(healthLabel);
 		program.add(pauseIndicator);
+		show();
 		player.show();
 		//enemy.show(); // only shows one car rn
 		timer = new Timer(10, this);
@@ -134,6 +175,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		score = 0;
 		totalTime = 0;
 		delayPower = 0;
+		resetHealth();
 	}
 
 	@Override
@@ -148,6 +190,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.remove(healthLabel);
 		program.remove(pauseIndicator);
 		traf.hide();
+		hide();
 		
 		// TODO Auto-generated method stub
 
@@ -173,6 +216,9 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		cars = traf.getCars();
 		
+		if(health != lastHealth) {
+			updateHealth();
+		}
 		//update map
 		
 		//update labels
@@ -208,6 +254,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		}
 		
 		if(health==0) {
+			program.setScore(score);
 			program.switchToNameInput();
 		}
 	}
@@ -312,5 +359,36 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		if(boxB.getX() > maxX || minX > boxB.getX() + boxB.getWidth()) return false;
 		if(boxB.getY() > maxY || minY > boxB.getY() + boxB.getHeight()) return false;
 		return true;
+	}
+	public void show() {
+		program.add(health1);
+		program.add(health2);
+		program.add(health3);
+		program.add(health4);
+		
+	}
+	
+	public void hide() {
+		program.remove(health1);
+		program.remove(health2);
+		program.remove(health3);
+		program.remove(health4);
+	}
+	
+	void resetHealth() {
+		show();
+		for(int i = 0; i < health; i++) {
+			healthBar.get(i).setFilled(true);
+		}
+	}
+	
+	void updateHealth() {
+		if(lastHealth > health) {
+			healthBar.get(health).setFilled(false);
+		}
+		else {
+			healthBar.get(health-1).setFilled(true);
+		}
+		lastHealth = health;
 	}
 }

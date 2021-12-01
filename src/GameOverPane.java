@@ -8,7 +8,7 @@ import java.util.Scanner;
 import acm.graphics.GImage;
 import acm.graphics.GObject;
 
-public class GameOver extends GraphicsPane {
+public class GameOverPane extends GraphicsPane {
 	
 	// you will use program to get access to all of the GraphicsProgram calls
 	private MainApplication program;
@@ -18,8 +18,11 @@ public class GameOver extends GraphicsPane {
 	private final int BUTTON_SIZE = 50;
 	private final int X = 50;
 	private final int Y = 50;
+	
+	long score;
+	String name;
 
-	public GameOver(MainApplication app) {
+	public GameOverPane(MainApplication app) {
 		super();
 		program = app;
 		screen = new GImage("AssetImages/Game Over.png",0,0);
@@ -30,12 +33,21 @@ public class GameOver extends GraphicsPane {
 		rect2.setFillColor(Color.RED);
 		rect2.setVisible(false);
 	}
+	
+	public void setScore(long score) {
+		this.score = score;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	@Override
 	public void showContents() {
 		program.add(screen);
 		program.add(rect);
 		program.add(rect2);
+		System.out.println("Score: "+score+" Name: "+name);
 	}
 
 	@Override
