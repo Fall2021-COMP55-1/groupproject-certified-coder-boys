@@ -36,7 +36,10 @@ public class GameOverPane extends GraphicsPane {
 	}
 	
 	public void setScore(long score) {
-		this.score = score*1000;
+		long adjustedScore = score*1000;
+		if(adjustedScore>999999)
+			adjustedScore=999999;
+		this.score = adjustedScore;
 	}
 	
 	public void setName(String name) {
