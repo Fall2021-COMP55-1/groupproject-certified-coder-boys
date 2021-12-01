@@ -3,6 +3,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 import acm.graphics.GImage;
@@ -35,7 +36,7 @@ public class GameOverPane extends GraphicsPane {
 	}
 	
 	public void setScore(long score) {
-		this.score = score;
+		this.score = score*1000;
 	}
 	
 	public void setName(String name) {
@@ -48,6 +49,13 @@ public class GameOverPane extends GraphicsPane {
 		program.add(rect);
 		program.add(rect2);
 		System.out.println("Score: "+score+" Name: "+name);
+		try {
+			program.newHighScore(name, (int)score);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		program.updateScore();
 	}
 
 	@Override

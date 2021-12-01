@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import acm.graphics.GImage;
 import acm.graphics.GLabel;
@@ -32,12 +33,14 @@ public class HighScoreMenu extends GraphicsPane {
 	GLabel score10;
 	
 	GImage back;
+	
+	HighScore o;
 
 	public HighScoreMenu(MainApplication app) {
 		super();
 		program = app;
 		
-		HighScore o = new HighScore();
+		o = new HighScore();
 		names = o.getNames();
 		scores = o.getScores();
 		
@@ -49,6 +52,24 @@ public class HighScoreMenu extends GraphicsPane {
 		back = new GImage("AssetImages/back button.png", 0, 0);
 		back.setSize(100, 50);
 		back.setLocation(0, WINDOW_HEIGHT-back.getHeight());
+	}
+	
+	public void newHighScore(String name, int score) throws IOException {
+		o.newHighScore(name, score);
+	}
+	
+	public void update() {
+		program.remove(score1);
+		program.remove(score2);
+		program.remove(score3);
+		program.remove(score4);
+		program.remove(score5);
+		program.remove(score6);
+		program.remove(score7);
+		program.remove(score8);
+		program.remove(score9);
+		program.remove(score10);
+		labels();
 	}
 	
 	public void labels(){

@@ -1,5 +1,7 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
+
 import acm.program.GraphicsProgram;
 
 public class MainApplication extends GraphicsProgram {
@@ -117,6 +119,14 @@ public class MainApplication extends GraphicsProgram {
 		//switchToMenu();
 		setupInteractions();
 		switchToGameMenu();
+	}
+
+	public void newHighScore(String name, int score) throws IOException {
+		highScorePane.newHighScore(name, score);
+	}
+	
+	public void updateScore() {
+		highScorePane.update();
 	}
 	
 	public void setScore(long score) {
