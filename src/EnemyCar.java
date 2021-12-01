@@ -53,6 +53,7 @@ public class EnemyCar extends Object implements ActionListener{
 			case 2:
 			case 3:
 				fileName = "AssetImages/BuickerB.png";
+				fileName = "AssetImages/Enemy3.png";
 				break;
 			case 4:
 				fileName = "AssetImages/RamB.png";
