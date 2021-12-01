@@ -213,34 +213,49 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	}
 	
 	public void levelCounter() {
-		if(score==30){
+		if(score==15){
 			level = "Level: 2";
 		}
-		else if(score==60) {
+		else if(score==30){
 			level = "Level: 3";
 		}
-		else if(score==90) {
+		else if(score==45){
 			level = "Level: 4";
 		}
-		else if(score==120) {
+		else if(score==60){
 			level = "Level: 5";
 		}
-		else if(score==150) {
-			level = "Level: 6";
-		}
-		else if(score==180) {
-			level = "Level: 7";
-		}
-		else if(score==210) {
-			level = "Level: 8";
-		}
-		else if(score==240) {
-			level = "Level: 9";
-		}
-		else if(score==270) {
-			level = "Level: 10";
-		}
 	}
+	
+//	public void levelCounter() {
+//		if(score==30){
+//			level = "Level: 2";
+//		}
+//		else if(score==60) {
+//			level = "Level: 3";
+//		}
+//		else if(score==90) {
+//			level = "Level: 4";
+//		}
+//		else if(score==120) {
+//			level = "Level: 5";
+//		}
+//		else if(score==150) {
+//			level = "Level: 6";
+//		}
+//		else if(score==180) {
+//			level = "Level: 7";
+//		}
+//		else if(score==210) {
+//			level = "Level: 8";
+//		}
+//		else if(score==240) {
+//			level = "Level: 9";
+//		}
+//		else if(score==270) {
+//			level = "Level: 10";
+//		}
+//	}
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
