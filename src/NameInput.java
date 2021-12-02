@@ -77,6 +77,13 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	public void keyPressed(KeyEvent e) {
 		key = e.getKeyCode();
 		
+//		if(key == KeyEvent.VK_ENTER) {
+//			nextPane();
+//		}
+		
+		if(key == KeyEvent.VK_SPACE || key == KeyEvent.VK_ALT || key == KeyEvent.VK_ENTER)
+			return; //do not list if enter or space or alt is pressed
+		
 		if(i<6) {
 			name[i] = (char)key;
 			i++;
@@ -122,10 +129,14 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == rect) {
-			setName();
-			program.setName(realName);
-			program.switchToGameOver();
+			nextPane();
 		}
+	}
+	
+	public void nextPane() {
+		setName();
+		program.setName(realName);
+		program.switchToGameOver();
 	}
 	
 	public void setName() {
