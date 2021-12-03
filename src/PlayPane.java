@@ -53,6 +53,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	int lastHealth;
 	GLabel healthLabel;
 	
+	GRect rectangle;
+	
 	boolean paused;
 	
 	GLabel pause;
@@ -136,8 +138,10 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		background = new GImage("AssetImages/galaxy2.gif",0,0);
 		background.setSize(800,600);
 		
+		
 		road = new GImage("AssetImages/Final Road 2L3S.gif",150,0);
 		road.setSize(500,600);
+		
 
 //		pause = new GLabel("PAUSE", 100, 100);
 //		pause.setColor(Color.pink);
@@ -155,6 +159,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.add(levelLabel);
 		program.add(healthLabel);
 		program.add(pauseIndicator);
+		//program.add(rectangle);
 		show();
 		player.show();
 		//enemy.show(); // only shows one car rn
