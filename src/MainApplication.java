@@ -1,5 +1,6 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.io.IOException;
 
 import acm.program.GraphicsProgram;
@@ -119,6 +120,16 @@ public class MainApplication extends GraphicsProgram {
 		//switchToMenu();
 		setupInteractions();
 		switchToGameMenu();
+		SwitchtoSound();
+	}
+	
+	public void SwitchtoSound() {
+		switchToScreen(menu);
+		
+		if (SoundEffect.Audio != null) {
+			SoundEffect.STOP();
+		}
+		SoundEffect.PLAY(new File("SoundAssets/F-Zero - Mute City (128 kbps).wav"));
 	}
 
 	public void newHighScore(String name, int score) throws IOException {
