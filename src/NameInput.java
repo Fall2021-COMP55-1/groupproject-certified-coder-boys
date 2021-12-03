@@ -81,7 +81,7 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 //			nextPane();
 //		}
 		
-		if(key == KeyEvent.VK_SPACE || key == KeyEvent.VK_ALT || key == KeyEvent.VK_ENTER)
+		if(key == KeyEvent.VK_SPACE || key == KeyEvent.VK_ALT || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_ESCAPE)
 			return; //do not list if enter or space or alt is pressed
 		
 		if(i<6) {
