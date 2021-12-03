@@ -1,5 +1,5 @@
 abstract class Object{
-  Space pos;
+  //Space pos;
   double speed;
   String fileName;
   int width;
@@ -7,7 +7,7 @@ abstract class Object{
 
   abstract int getHeight();
   abstract int getWidth();
-  abstract Space getSpace();
+  //abstract Space getSpace();
   abstract String getFileName();
   abstract void update();
 }

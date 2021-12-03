@@ -96,9 +96,9 @@ public class EnemyCar extends Object implements ActionListener{
 		return height;
 	}
 	
-	public Space getSpace() { // may need to be fixed
-		return pos;
-	}
+//	public Space getSpace() { // may need to be fixed
+//		return pos;
+//	}
 	
 	public double getY() {
 		return car.getY();
