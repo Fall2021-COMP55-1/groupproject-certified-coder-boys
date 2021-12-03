@@ -16,7 +16,7 @@ public class PlayerCar extends Object{
 	GImage car;
 	
 	public PlayerCar(MainApplication app, PlayPane pane) { //needs to be finished
-		pos = new Space();
+		//pos = new Space();
 		x = 400;
 		y = 450;
 		dx = 0;
@@ -34,9 +34,9 @@ public class PlayerCar extends Object{
 		return height;
 	}
 	
-	public Space getSpace() {
-		return pos;
-	}
+//	public Space getSpace() {
+//		return pos;
+//	}
 	
 	public String getFileName() {
 		return fileName;

@@ -29,7 +29,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	EnemyCar enemy;
 	GImage background;
 	GImage road;
-	Powerup item;
 	
 	ArrayList<GRect> healthBar;
 	
