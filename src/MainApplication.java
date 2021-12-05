@@ -12,7 +12,7 @@ public class MainApplication extends GraphicsProgram {
 	public static final String MUSIC_FOLDER = "sounds";
 
 	private GraphicsPane curScreen;
-	private SomePane somePane;
+	//private SomePane somePane;
 	private MenuPane menu;
 	private PlayPane game;
 	private HighScoreMenu highScorePane;
@@ -108,7 +108,7 @@ public class MainApplication extends GraphicsProgram {
 
 	public void run() {
 		System.out.println("Let's make something awesome!");
-		somePane = new SomePane(this);
+		//somePane = new SomePane(this);
 		
 		menu = new MenuPane(this);
 		highScorePane = new HighScoreMenu(this);
@@ -152,9 +152,9 @@ public class MainApplication extends GraphicsProgram {
 		switchToScreen(menu);
 	}
 
-	public void switchToSome() {
-		switchToScreen(somePane);
-	}
+//	public void switchToSome() {
+//		switchToScreen(somePane);
+//	}
 	
 	public void switchToGameMenu() {
 		switchToScreen(titleScreen);
