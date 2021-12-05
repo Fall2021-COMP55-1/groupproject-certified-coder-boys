@@ -140,9 +140,9 @@ public class Traffic {
 		return cars;
 	}
 	
-	public void increaseDifficulty() {
-		// reads timer from game and will increases spawn speed, car speed, etc. for the enemy cars
-	}
+//	public void increaseDifficulty() {
+//		// reads timer from game and will increases spawn speed, car speed, etc. for the enemy cars
+//	}
 	
 	public void show() {
 		if(cars.size() == 0) {
