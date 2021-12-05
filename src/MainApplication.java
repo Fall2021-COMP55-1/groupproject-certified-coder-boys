@@ -119,18 +119,18 @@ public class MainApplication extends GraphicsProgram {
 		
 		//switchToMenu();
 		setupInteractions();
-		switchToGameMenu();
-		//SwitchtoSound();
+		//switchToGameMenu();
+		SwitchtoSound();
 	}
 	
-//	public void SwitchtoSound() {
-//		switchToScreen(titleScreen);
-//		
-//		if (SoundEffect.Audio != null) {
-//			SoundEffect.STOP();
-//		}
-//		SoundEffect.PLAY(new File("SoundAssets/F-Zero - Mute City (128 kbps).wav"));
-//	}
+	public void SwitchtoSound() {
+		switchToScreen(titleScreen);
+		
+		if (SoundEffect.Audio != null) {
+			SoundEffect.STOP();
+		}
+		SoundEffect.PLAY(new File("SoundAssets/F-Zero - Mute City (128 kbps).wav"));
+	}
 
 	public void newHighScore(String name, int score) throws IOException {
 		highScorePane.newHighScore(name, score);
@@ -158,11 +158,6 @@ public class MainApplication extends GraphicsProgram {
 	
 	public void switchToGameMenu() {
 		switchToScreen(titleScreen);
-		
-		if (SoundEffect.Audio != null) {
-			SoundEffect.STOP();
-		}
-		SoundEffect.PLAY(new File("SoundAssets/F-Zero - Mute City (128 kbps).wav"));
 	}
 	
 	public void switchToHighScore() {

@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 import acm.graphics.GObject;
 import acm.graphics.GImage;
