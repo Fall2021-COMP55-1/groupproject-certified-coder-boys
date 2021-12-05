@@ -29,6 +29,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	EnemyCar enemy;
 	GImage background;
 	GImage road;
+	GImage roadOutline;
 	
 	ArrayList<GRect> healthBar;
 	
@@ -141,6 +142,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		road = new GImage("AssetImages/Final Road 2L3S.gif",150,0);
 		road.setSize(500,600);
 		
+		roadOutline = new GImage("AssetImages/road outline.png",0,0);
+		
 
 //		pause = new GLabel("PAUSE", 100, 100);
 //		pause.setColor(Color.pink);
@@ -153,6 +156,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	public void showContents() {
 		reset();
 		program.add(background);
+		program.add(roadOutline);
 		program.add(road);
 		program.add(scoreLabel);
 		program.add(levelLabel);
@@ -189,6 +193,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		player.hide();
 		program.remove(background);
 		program.remove(road);
+		program.remove(roadOutline);
 		program.remove(scoreLabel);
 		program.remove(levelLabel);
 		program.remove(healthLabel);
