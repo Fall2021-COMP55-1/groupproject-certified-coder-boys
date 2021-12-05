@@ -124,7 +124,7 @@ public class MainApplication extends GraphicsProgram {
 	}
 	
 	public void SwitchtoSound() {
-		switchToScreen(menu);
+		switchToScreen(titleScreen);
 		
 		if (SoundEffect.Audio != null) {
 			SoundEffect.STOP();
