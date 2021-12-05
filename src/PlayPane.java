@@ -328,10 +328,10 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 			showPaused();
 		}
 		else if(key == KeyEvent.VK_SPACE) {
-			//USE HEALTH POWERUP LIMITED TO EVERY 60 SECONDS
+			//USE HEALTH POWERUP LIMITED TO EVERY 20-ish SECONDS
 			if(health<4 && delayPower == 0) {
 				health++;
-				delayPower = 3600; //60 seconds
+				delayPower = 2000; //20-ish seconds
 				program.remove(powerup);
 				program.add(cooldown);
 				//remove gimage
