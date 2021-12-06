@@ -107,8 +107,6 @@ public class MainApplication extends GraphicsProgram {
 	}
 
 	public void run() {
-		System.out.println("Let's make something awesome!");
-		//somePane = new SomePane(this);
 		
 		menu = new MenuPane(this);
 		highScorePane = new HighScoreMenu(this);
@@ -116,21 +114,9 @@ public class MainApplication extends GraphicsProgram {
 		titleScreen = new TitleScreenPane(this);
 		over = new GameOverPane(this);
 		name = new NameInput(this);
-		
-		//switchToMenu();
 		setupInteractions();
 		switchToGameMenu();
-		//SwitchtoSound();
 	}
-	
-//	public void SwitchtoSound() {
-//		switchToScreen(titleScreen);
-//		
-//		if (SoundEffect.Audio != null) {
-//			SoundEffect.STOP();
-//		}
-//		SoundEffect.PLAY(new File("SoundAssets/F-Zero - Mute City (128 kbps).wav"));
-//	}
 
 	public void newHighScore(String name, int score) throws IOException {
 		highScorePane.newHighScore(name, score);
@@ -151,10 +137,6 @@ public class MainApplication extends GraphicsProgram {
 	public void switchToMenu() {
 		switchToScreen(menu);
 	}
-
-//	public void switchToSome() {
-//		switchToScreen(somePane);
-//	}
 	
 	public void switchToGameMenu() {
 		switchToScreen(titleScreen);
