@@ -36,9 +36,13 @@ public class GameOverPane extends GraphicsPane {
 	}
 	
 	public void setScore(long score) {
+		//for aesthetic purposes, the score is multiplied by 1000
 		long adjustedScore = score*1000;
+		
+		//score caps out at 999999
 		if(adjustedScore>999999)
 			adjustedScore=999999;
+		
 		this.score = adjustedScore;
 	}
 	
@@ -52,12 +56,14 @@ public class GameOverPane extends GraphicsPane {
 		program.add(rect);
 		program.add(rect2);
 		System.out.println("Score: "+score+" Name: "+name);
+		
+		//checks if the player achieved a new highscore
 		try {
 			program.newHighScore(name, (int)score);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		program.updateScore();
 	}
 
