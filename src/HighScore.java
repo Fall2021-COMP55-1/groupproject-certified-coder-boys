@@ -41,13 +41,6 @@ public class HighScore {
 
 			    scores[i] = numScore;
 			    
-			    //names[0] = list.substring(0, 6)
-			    //names[1] = list.substring(12, 18)
-			    //names[2] = list.substring(24, 30)
-				
-			    //scores[0] = list.substring(6, 12)
-				//scores[1] = list.substring(18, 24)
-			    //scores[2] = list.substring(30,36)
 			}
 			
 		} catch (FileNotFoundException e) {
