@@ -17,70 +17,48 @@ import acm.program.Program;
 
 public class PlayPane extends GraphicsPane implements KeyListener, ActionListener {
 	private MainApplication program; 
-	
 	boolean gameOver = false;
-	
-	// game loop
 	private Timer timer;
 	
 	ArrayList<EnemyCar> cars;
-	
 	PlayerCar player;
 	EnemyCar enemy;
 	GImage background;
 	GImage road;
 	GImage roadOutline;
-	
 	ArrayList<GRect> healthBar;
-	
 	GRect health1;
 	GRect health2;
 	GRect health3;
 	GRect health4;
-	
 	long score;
 	long totalTime = 0;
 	String level;
-	
 	Traffic traf;
-	
 	String scoreString;
-	
 	GLabel scoreLabel;
 	GLabel levelLabel;
-	
 	int health;
 	int lastHealth;
 	GLabel healthLabel;
-	
 	GRect rectangle;
-	
 	boolean paused;
-	
 	GLabel pause;
 	GImage pauseScreen;
-	
 	GImage powerup;
 	GImage cooldown;
-	
 	GImage pauseIndicator;
 	GImage invicibilityIndicator;
-	
 	long startTime;
-	
 	int delayHealth;
-	
 	int delayPower;
-	
-	//GUI UI; add this to update the game's labels
-	
+
 	public PlayPane(MainApplication app) {
 		super();
 		program = app;
 		
 		traf = new Traffic(app, this);
 		
-		//define all starting states here
 		player = new PlayerCar(app, this);
 		
 		scoreLabel = new GLabel("Score: 0", 0, 200);
@@ -143,11 +121,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		road.setSize(500,600);
 		
 		roadOutline = new GImage("AssetImages/road outline.png",0,0);
-		
 
-//		pause = new GLabel("PAUSE", 100, 100);
-//		pause.setColor(Color.pink);
-		
 		delayHealth = 1;
 		delayPower = 0;
 	}
@@ -162,10 +136,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.add(levelLabel);
 		program.add(healthLabel);
 		program.add(pauseIndicator);
-		//program.add(rectangle);
 		show();
 		player.show();
-		//enemy.show(); // only shows one car rn
 		timer = new Timer(10, this);
 		timer.start();
 		startTime = System.currentTimeMillis();
@@ -179,7 +151,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		level = "Level: 1";
 		levelLabel.setLabel(level);
 		delayHealth = 1;
-		//traf.hide();
 		score = 0;
 		totalTime = 0;
 		delayPower = 0;
@@ -188,7 +159,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 
 	@Override
 	public void hideContents() {
-		//program.remove(playerCar);
 		timer.stop();
 		player.hide();
 		program.remove(background);
@@ -282,37 +252,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 			level = "Level: 5";
 		}
 	}
-	
-//	public void levelCounter() {
-//		if(score==30){
-//			level = "Level: 2";
-//		}
-//		else if(score==60) {
-//			level = "Level: 3";
-//		}
-//		else if(score==90) {
-//			level = "Level: 4";
-//		}
-//		else if(score==120) {
-//			level = "Level: 5";
-//		}
-//		else if(score==150) {
-//			level = "Level: 6";
-//		}
-//		else if(score==180) {
-//			level = "Level: 7";
-//		}
-//		else if(score==210) {
-//			level = "Level: 8";
-//		}
-//		else if(score==240) {
-//			level = "Level: 9";
-//		}
-//		else if(score==270) {
-//			level = "Level: 10";
-//		}
-//	}
-	
+
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
@@ -334,7 +274,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 				delayPower = 2000; //20-ish seconds
 				program.remove(powerup);
 				program.add(cooldown);
-				//remove gimage
 			}
 		}
 	}
