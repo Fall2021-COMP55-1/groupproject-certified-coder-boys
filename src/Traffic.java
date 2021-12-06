@@ -12,7 +12,6 @@ public class Traffic {
 	private int dx = 0;
 	private int dy = 0;
 	EnemyCar car;
-	// add the three lane x and y values
 	private Random rand = new Random();
 	MainApplication app;
 	PlayPane game;
@@ -59,13 +58,6 @@ public class Traffic {
 		
 		delay --;
 		
-		//update cars on board, delete?
-//		if(cars.size() != 0) {
-//			for(int i = 0; i < cars.size(); i++) {
-//					cars.get(i).update();	
-//			}
-//		}
-		
 		//doesn't spawn cars until delay hits 0
 		if(delay != 0) {
 			return;
@@ -76,34 +68,6 @@ public class Traffic {
 		int roll;
 		double x = 0;
 		double y = 0;
-		
-//		if(diff < 45) {
-//			//chooses random position for car
-//			roll = rand.nextInt(3) % 3;
-//			dy = 2;
-//			switch(roll) {
-//			case 0:
-//				x = 400; //ADJUST
-//				y = 0;
-//				break;
-//			 
-//			case 1:
-//				x = 300; //ADJUST
-//				y = 0;
-//				break;
-//				
-//			case 2:
-//				x = 500; //ADJUST
-//				y = 0;
-//				break;
-//
-//			}
-//		}
-//		else {
-//			x = (Math.abs(rand.nextInt()) % 401)+150;
-//			System.out.println("\n rand int gen: X: " + x );
-//			y = 0;
-//		}
 		
 		//random x position is chosen
 		x = (Math.abs(rand.nextInt()) % 401)+150;
@@ -121,28 +85,11 @@ public class Traffic {
 		car = new EnemyCar(app, game, dx, dy, x, y);
 		cars.add(car);
 		car.show();
-		
-		
-//		Iterator<EnemyCar> iter = EnemyCar.iterator();
-//		while(iter.hasNext()) {
-//			enemyCarTemp = iter.next();
-//			temp.update();
-			//if(program.collision(temp.getBox()), game.getPLaterBox()) == true
-			//{
-			//prgram.getPLayer.takeDamage();
-			//program.hide();
-			// iter.remove;
-			//}
-		//}
 	}
 	
 	public ArrayList<EnemyCar> getCars(){
 		return cars;
 	}
-	
-//	public void increaseDifficulty() {
-//		// reads timer from game and will increases spawn speed, car speed, etc. for the enemy cars
-//	}
 	
 	public void show() {
 		if(cars.size() == 0) {
