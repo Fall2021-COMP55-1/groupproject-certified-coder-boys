@@ -1,9 +1,6 @@
-import acm.graphics.GImage;
+	import acm.graphics.GImage;
 
 public class PlayerCar extends Object{
-
-	 // Sets the powerup’s speed, width, height, filename, and Space.
-
 	String fileName;
 	int width;
 	int height;
@@ -15,8 +12,7 @@ public class PlayerCar extends Object{
 	PlayPane game;
 	GImage car;
 	
-	public PlayerCar(MainApplication app, PlayPane pane) { //needs to be finished
-		//pos = new Space();
+	public PlayerCar(MainApplication app, PlayPane pane) { 
 		x = 400;
 		y = 450;
 		dx = 0;
@@ -33,11 +29,7 @@ public class PlayerCar extends Object{
 	public int getHeight() {
 		return height;
 	}
-	
-//	public Space getSpace() {
-//		return pos;
-//	}
-	
+
 	public String getFileName() {
 		return fileName;
 	}
