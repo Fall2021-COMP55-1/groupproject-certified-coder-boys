@@ -7,8 +7,6 @@ import acm.graphics.GLabel;
 import acm.graphics.GObject;
 
 public class HighScoreMenu extends GraphicsPane {
-	
-	// you will use program to get access to all of the GraphicsProgram calls
 	private MainApplication program; 
 
 	String names[];
