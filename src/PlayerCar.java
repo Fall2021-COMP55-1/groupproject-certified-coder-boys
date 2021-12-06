@@ -22,26 +22,6 @@ public class PlayerCar extends Object{
 		car.setSize(60,120);
 	}
 	
-	public int getWidth() {
-		return width;
-	}
-	
-	public int getHeight() {
-		return height;
-	}
-
-	public String getFileName() {
-		return fileName;
-	}
-	
-	public GImage getImage() {
-		return car;
-	}
-	
-	public int getHealth() {
-		return health;
-	}
-	
 	public void updateDX(int x) {
 		if(x < 0 && dx > 0)
 			dx = -5;
@@ -77,5 +57,26 @@ public class PlayerCar extends Object{
 	}
 	public void hide() {
 		program.remove(car);
+	}
+	
+	//getters
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+	
+	public GImage getImage() {
+		return car;
+	}
+	
+	public int getHealth() {
+		return health;
 	}
 }
