@@ -77,10 +77,6 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	public void keyPressed(KeyEvent e) {
 		key = e.getKeyCode();
 		
-//		if(key == KeyEvent.VK_ENTER) {
-//			nextPane();
-//		}
-		
 		if(key == KeyEvent.VK_SPACE || key == KeyEvent.VK_ALT || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_ESCAPE)
 			return; //do not list if enter or space or alt is pressed
 		
@@ -93,11 +89,6 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 			name[i] = (char)key;
 			i++;
 		}
-		
-//		//test code
-//		for(int i = 0; i < 6; i++) {
-//			System.out.println(name[i]);
-//		}
 	}
 	
 	@Override
