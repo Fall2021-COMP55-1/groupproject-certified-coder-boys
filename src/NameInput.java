@@ -77,8 +77,9 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	public void keyPressed(KeyEvent e) {
 		key = e.getKeyCode();
 		
+		//do not list if enter or space or alt is pressed
 		if(key == KeyEvent.VK_SPACE || key == KeyEvent.VK_ALT || key == KeyEvent.VK_ENTER || key == KeyEvent.VK_ESCAPE)
-			return; //do not list if enter or space or alt is pressed
+			return;
 		
 		if(i<6) {
 			name[i] = (char)key;
@@ -125,11 +126,13 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 	}
 	
 	public void nextPane() {
+		//sets the player's name switches to the game over screen
 		setName();
 		program.setName(realName);
 		program.switchToGameOver();
 	}
 	
+	//setter
 	public void setName() {
 		realName = "";
 		for(int i = 0; i<6; i++) {
@@ -138,13 +141,13 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 		System.out.println(realName);
 	}
 	
+	//getter
 	public String getName() {
 		return realName;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if(i == 1) {
 			letter1.setLabel(Character.toString(name[0]));
 		}
@@ -162,9 +165,8 @@ public class NameInput extends GraphicsPane implements KeyListener, ActionListen
 		}
 		if(i == 6) {
 			letter6.setLabel(Character.toString(name[5]));
-			program.add(rect);
+			program.add(rect); //adds the next button once the user has input 6 characters
 			i++;
 		}
-		
 	}
 }
