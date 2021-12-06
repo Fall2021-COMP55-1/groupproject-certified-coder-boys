@@ -20,36 +20,51 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 	boolean gameOver = false;
 	private Timer timer;
 	
+	//car entities
 	ArrayList<EnemyCar> cars;
 	PlayerCar player;
 	EnemyCar enemy;
+	Traffic traf;
+	
+	//background
 	GImage background;
 	GImage road;
 	GImage roadOutline;
+	
+	//healthbar
 	ArrayList<GRect> healthBar;
 	GRect health1;
 	GRect health2;
 	GRect health3;
 	GRect health4;
-	long score;
-	long totalTime = 0;
-	String level;
-	Traffic traf;
-	String scoreString;
-	GLabel scoreLabel;
-	GLabel levelLabel;
+	
+	//health label
 	int health;
 	int lastHealth;
 	GLabel healthLabel;
+	
+	//pause function
 	GRect rectangle;
 	boolean paused;
 	GLabel pause;
 	GImage pauseScreen;
+	long totalTime = 0;
+	
+	//game function
+	long score;
+	String level;
+	long startTime;
+	
+	//UI
+	String scoreString;
+	GLabel scoreLabel;
+	GLabel levelLabel;
 	GImage powerup;
 	GImage cooldown;
 	GImage pauseIndicator;
 	GImage invicibilityIndicator;
-	long startTime;
+	
+	//delays
 	int delayHealth;
 	int delayPower;
 
@@ -126,6 +141,21 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		delayPower = 0;
 	}
 	
+	//resets the game's functions once the player plays again
+	public void reset() {
+		player = new PlayerCar(program, this);
+		traf = new Traffic(program, this);
+		score = 0;
+		health = 4;
+		level = "Level: 1";
+		levelLabel.setLabel(level);
+		delayHealth = 1;
+		score = 0;
+		totalTime = 0;
+		delayPower = 0;
+		resetHealth();
+	}
+	
 	@Override
 	public void showContents() {
 		reset();
@@ -142,20 +172,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		timer.start();
 		startTime = System.currentTimeMillis();
 	}
-	
-	public void reset() {
-		player = new PlayerCar(program, this);
-		traf = new Traffic(program, this);
-		score = 0;
-		health = 4;
-		level = "Level: 1";
-		levelLabel.setLabel(level);
-		delayHealth = 1;
-		score = 0;
-		totalTime = 0;
-		delayPower = 0;
-		resetHealth();
-	}
 
 	@Override
 	public void hideContents() {
@@ -170,9 +186,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		program.remove(pauseIndicator);
 		traf.hide();
 		hide();
-		
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -181,6 +194,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 			return;
 		}
 		
+		//powerup manager
 		if(delayPower>0)
 			delayPower--;
 		else {
@@ -188,6 +202,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 			program.add(powerup);
 		}
 		
+		//update player
 		player.update();
 		
 		//update enemies
@@ -210,8 +225,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		
 		healthLabel.setLabel("Health: "+health);
 		
-		//check health
-		
+		//invincibility implementation that lasts for a few seconds when player is hit
 		delayHealth--;
 		
 		if(delayHealth <= 0) {
@@ -222,11 +236,11 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		//run through enemy array to check with collision function
 		for(EnemyCar enemy : cars) {
 			if(collision(player.getImage(), enemy.getImage())) {
-				//invincibility implementation
+				//when player is hit
 				if(delayHealth==0) {
 					health--;
 					//System.out.println("OUCH!");
-					delayHealth = 120;
+					delayHealth = 120; //player is invincible for a few seconds
 					program.add(invicibilityIndicator);
 				}
 			}
@@ -252,36 +266,6 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 			level = "Level: 5";
 		}
 	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		int key = e.getKeyCode();
-		if(key == KeyEvent.VK_LEFT) {
-			player.updateDX(-5);
-		}
-		else if(key == KeyEvent.VK_RIGHT) {
-			player.updateDX(5);
-		}
-		else if(key == KeyEvent.VK_ESCAPE) {
-			//pauses game
-			paused = !paused;
-			showPaused();
-		}
-		else if(key == KeyEvent.VK_SPACE) {
-			//USE HEALTH POWERUP LIMITED TO EVERY 20-ish SECONDS
-			if(health<4 && delayPower == 0) {
-				health++;
-				delayPower = 2000; //20-ish seconds
-				program.remove(powerup);
-				program.add(cooldown);
-			}
-		}
-	}
-	
-	@Override
-	public void keyReleased(KeyEvent e) {
-		player.stopDX();
-	}
 	
 	public void showPaused() {
 		if(paused) {
@@ -294,10 +278,12 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		}
 	}
 	
+	//getter
 	public long getScore() {
 		return score;
 	}
 	
+	//collision implementation
 	public boolean collision(GImage boxA, GImage boxB) {
 		double minX = boxA.getX();
 		double minY = boxA.getY();
@@ -308,6 +294,8 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 		if(boxB.getY() > maxY || minY > boxB.getY() + boxB.getHeight()) return false;
 		return true;
 	}
+	
+	//health bar implementation
 	public void show() {
 		program.add(health1);
 		program.add(health2);
@@ -338,5 +326,35 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 			healthBar.get(health-1).setFilled(true);
 		}
 		lastHealth = health;
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+		if(key == KeyEvent.VK_LEFT) {
+			player.updateDX(-5);
+		}
+		else if(key == KeyEvent.VK_RIGHT) {
+			player.updateDX(5);
+		}
+		else if(key == KeyEvent.VK_ESCAPE) {
+			//pauses game
+			paused = !paused;
+			showPaused();
+		}
+		else if(key == KeyEvent.VK_SPACE) {
+			//USE HEALTH POWERUP LIMITED TO EVERY 20-ish SECONDS
+			if(health<4 && delayPower == 0) {
+				health++;
+				delayPower = 2000; //20-ish seconds
+				program.remove(powerup);
+				program.add(cooldown);
+			}
+		}
+	}
+	
+	@Override
+	public void keyReleased(KeyEvent e) {
+		player.stopDX();
 	}
 }
