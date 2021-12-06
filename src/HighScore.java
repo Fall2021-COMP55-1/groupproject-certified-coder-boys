@@ -59,12 +59,15 @@ public class HighScore {
 	public void newHighScore(String name, int score) throws IOException {
 		FileWriter fw = new FileWriter(data);
 		
+		//player replaces the lowest score, and the program sorts the new leaderboard
 		if(checkHighScore(name, score)) {
 			names[0] = name;
 			scores[0] = score;
 			
 			sort();
 		}
+		
+		//text file is overwritten
 		for(int i = 0; i<10; i++) {
 			fw.write(names[i]);
 			fw.write(Integer.toString(scores[i]));
