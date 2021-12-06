@@ -60,7 +60,6 @@ public class MenuPane extends GraphicsPane {
 			program.switchToGame();
 		}
 		if(obj == rect4) {
-			//program.switchToNameInput();
 			System.exit(0); // exiting the game!
 		}
 	}
