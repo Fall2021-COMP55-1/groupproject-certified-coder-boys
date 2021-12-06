@@ -71,7 +71,7 @@ public class Traffic {
 		
 		//random x position is chosen
 		x = (Math.abs(rand.nextInt()) % 401)+150;
-		System.out.println("\n rand int gen: X: " + x );
+		//System.out.println("\n rand int gen: X: " + x );
 		y = 0;
 		
 		//dy is randomly generated
@@ -80,8 +80,8 @@ public class Traffic {
 		if(diff < 45)
 			dx = 0;
 		
-		System.out.println("\n dx: " + dx + " , dy: " + dy);
-		System.out.println(delay);
+//		System.out.println("\n dx: " + dx + " , dy: " + dy);
+//		System.out.println(delay);
 		car = new EnemyCar(app, game, dx, dy, x, y);
 		cars.add(car);
 		car.show();
