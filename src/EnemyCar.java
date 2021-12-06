@@ -6,12 +6,6 @@ import javax.swing.*;
 import acm.graphics.GImage;
 
 public class EnemyCar extends Object implements ActionListener{
-	/*
-	 * Sets the enemy’s speed, width, height, filename, and Space.  
-	 * spawn() returns the vehicle for placement in the Game class.
-	 */
-	
-	// below are the variables that will be needed
 	private double speed;
 	private String fileName;
 	private int width = 50;
@@ -25,19 +19,11 @@ public class EnemyCar extends Object implements ActionListener{
 	private PlayPane game;
 	private GImage car;
 	
-	public void actionPerformed(ActionEvent e) { // added an actionPerformed function for timer
+	public void actionPerformed(ActionEvent e) {
 		enemyTimer.stop();
 	}
 	
-//	public void run() { // added a run function to start timer and gave it a delay will be adjusted later can also change this into spawn function
-//		enemyTimer.setInitialDelay(1000);
-//		enemyTimer.start();
-//		
-//	}
-	
-	public EnemyCar(MainApplication app, PlayPane pane, double dx, double dy, double x, double y) { // finish this function
-		//x = 400;
-		//y = 300;
+	public EnemyCar(MainApplication app, PlayPane pane, double dx, double dy, double x, double y) {
 		program = app;
 		
 		this.dx = dx;
@@ -59,7 +45,6 @@ public class EnemyCar extends Object implements ActionListener{
 				break;
 			case 3:
 				fileName = "AssetImages/BuickerB.png";
-				//fileName = "AssetImages/Enemy2.png";
 				break;
 			case 4:
 				fileName = "AssetImages/RamB.png";
@@ -76,35 +61,27 @@ public class EnemyCar extends Object implements ActionListener{
 				
 			default:
 				fileName = "AssetImages/Porsche.png";
-				break; //a
+				break; 
 		}
 		
-		System.out.println(fileName);
+		//System.out.println(fileName);
 		car = new GImage(fileName,x,y);
 		car.setSize(width, height);
 	}
-	
-//	public EnemyCar spawn() { have to add a global enemyCar
-//		return EnemyCar;
-//	}
-	
-	public int getWidth() { // may need to be fixed
+
+	public int getWidth() { 
 		return width;
 	}
 	
-	public int getHeight() { // may need to be fixed
+	public int getHeight() { 
 		return height;
 	}
-	
-//	public Space getSpace() { // may need to be fixed
-//		return pos;
-//	}
 	
 	public double getY() {
 		return car.getY();
 	}
 	
-	public String getFileName() { // may need to be fixed
+	public String getFileName() { 
 		return fileName;
 	}
 
@@ -134,9 +111,7 @@ public class EnemyCar extends Object implements ActionListener{
 			}
 		}
 		else
-			car.move(dx, dy);
-		// TODO Auto-generated method stub
-		
+			car.move(dx, dy);	
 	}
 	
 	public double getDX() {
@@ -148,7 +123,7 @@ public class EnemyCar extends Object implements ActionListener{
 	}
 	
 	public void show() {
-		program.add(car); // adds one car right now
+		program.add(car); 
 	}
 	public void hide() {
 		program.remove(car);
