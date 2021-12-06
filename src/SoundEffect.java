@@ -11,7 +11,6 @@
 //import javax.swing.JPanel;
 
 
-
 //public class SoundEffect {
 	//static Clip Audio;
 	//SoundEffect(){}
