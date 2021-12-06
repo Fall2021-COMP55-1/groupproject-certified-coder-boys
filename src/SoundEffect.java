@@ -31,7 +31,7 @@ public class SoundEffect {
 		//Austin Was Here
 	}
 	public static void main (String [] args) {
-		File TestAudio= new File("SoundAssets/F-Zero - Mute City (128 kbps).wav");
+		File TestAudio= new File("SoundAssets/mute city 3.5.wav");
 		PLAY(TestAudio);
 	}
 }

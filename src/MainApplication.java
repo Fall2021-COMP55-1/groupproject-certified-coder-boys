@@ -162,7 +162,7 @@ public class MainApplication extends GraphicsProgram {
 		if (SoundEffect.Audio != null) {
 			SoundEffect.STOP();
 		}
-		SoundEffect.PLAY(new File("SoundAssets/F-Zero - Mute City (128 kbps).wav"));
+		SoundEffect.PLAY(new File("SoundAssets/mute city 3.5.wav"));
 	}
 	
 	public void switchToHighScore() {
