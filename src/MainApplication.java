@@ -12,7 +12,6 @@ public class MainApplication extends GraphicsProgram {
 	public static final String MUSIC_FOLDER = "sounds";
 
 	private GraphicsPane curScreen;
-	//private SomePane somePane;
 	private MenuPane menu;
 	private PlayPane game;
 	private HighScoreMenu highScorePane;
@@ -117,6 +116,7 @@ public class MainApplication extends GraphicsProgram {
 		switchToGameMenu();
 	}
 
+	//highscore functions
 	public void newHighScore(String name, int score) throws IOException {
 		highScorePane.newHighScore(name, score);
 	}
@@ -125,6 +125,7 @@ public class MainApplication extends GraphicsProgram {
 		highScorePane.update();
 	}
 	
+	//setters
 	public void setScore(long score) {
 		over.setScore(score);
 	}
@@ -133,10 +134,10 @@ public class MainApplication extends GraphicsProgram {
 		over.setName(name);
 	}
 
+	//switch to menus
 	public void switchToMenu() {
 		switchToScreen(menu);
 	}
-
 	
 	public void switchToGameMenu() {
 		switchToScreen(titleScreen);
