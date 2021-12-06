@@ -225,7 +225,7 @@ public class PlayPane extends GraphicsPane implements KeyListener, ActionListene
 				//invincibility implementation
 				if(delayHealth==0) {
 					health--;
-					System.out.println("OUCH!");
+					//System.out.println("OUCH!");
 					delayHealth = 120;
 					program.add(invicibilityIndicator);
 				}
